@@ -10,11 +10,21 @@ namespace QuickStart
 
         private Material playerMaterialClone;
 
+        private SceneScript sceneScript;
+
+
+
         [SyncVar(hook = nameof(OnNameChanged))]
         public string playerName;
 
         [SyncVar(hook = nameof(OnColorChanged))]
         public Color playerColor = Color.white;
+
+        void Awake()
+        {
+            //allow all players to run this
+            sceneScript = GameObject.FindObjectOfType<SceneScript>();
+        }
 
         void OnNameChanged(string _Old, string _New)
         {
@@ -31,6 +41,7 @@ namespace QuickStart
 
         public override void OnStartLocalPlayer()
         {
+            sceneScript.playerScript = this;
             Camera.main.transform.SetParent(transform);
             Camera.main.transform.localPosition = new Vector3(0, 0, 0);
 
@@ -43,11 +54,19 @@ namespace QuickStart
         }
 
         [Command]
+        public void CmdSendPlayerMessage()
+        {
+            if (sceneScript)
+                sceneScript.statusText = $"{playerName} says hello {Random.Range(10, 99)}";
+        }
+
+        [Command]
         public void CmdSetupPlayer(string _name, Color _col)
         {
-            // player info sent to server, then server updates sync vars which handles it on all clients
+            //player info sent to server, then server updates sync vars which handles it on all clients
             playerName = _name;
             playerColor = _col;
+            sceneScript.statusText = $"{playerName} joined.";
         }
 
         void Update()
@@ -65,5 +84,7 @@ namespace QuickStart
             transform.Rotate(0, moveX, 0);
             transform.Translate(0, 0, moveZ);
         }
+
+
     }
 }
