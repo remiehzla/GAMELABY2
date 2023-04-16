@@ -19,23 +19,37 @@ public class Tile : MonoBehaviour
         promptManager = FindObjectOfType<PromptManager>();
     }
 
+    private void Update()
+    {
+        if (prompt == null)
+        {
+            hasPrompt = false;
+        }
+    }
+
     private void OnMouseEnter()
     {
+        // Update tile color when mouse hovers over
+
         meshRenderer.material = selectedMaterial;
     }
 
     private void OnMouseExit()
     {
+        // Update tile color when mouse doesn't hover over
+
         meshRenderer.material = defaultMaterial;
     }
     private void OnMouseDown()
     {
+        // If tile is empty, place the selected prompt. If not empty, demolish the prompt.
+
         if (!hasPrompt)
         {
-            hasPrompt = true;
             if (promptManager.selectedPrompt != 0)
             {
-                promptManager.BuildPrompt(transform);
+                hasPrompt = true;
+                promptManager.PlacePrompt(transform);
             }
             else
             {
@@ -45,7 +59,7 @@ public class Tile : MonoBehaviour
         else
         {
             hasPrompt = false;
-            Destroy(prompt);
+            promptManager.DemolishPrompt(prompt);
         }
     }
 }
