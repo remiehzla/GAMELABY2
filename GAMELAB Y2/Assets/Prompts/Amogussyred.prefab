@@ -440,7 +440,9 @@ MonoBehaviour:
   socialPoints: 1
   environmentPoints: -5
   economyPoints: 10
-  mesh: {fileID: 5394783102396665321}
+  mesh: {fileID: 7328396814730184606}
+  unbuiltMat: {fileID: 2100000, guid: 4689e9668e5f4f942ba1716c2c10d9ac, type: 2}
+  builtMat: {fileID: 2100000, guid: 1b4163fbca62e054984b3aff0dd673b6, type: 2}
 --- !u!1 &9129707136675421512
 GameObject:
   m_ObjectHideFlags: 0

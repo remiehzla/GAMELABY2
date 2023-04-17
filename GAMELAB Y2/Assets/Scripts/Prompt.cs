@@ -12,10 +12,14 @@ public class Prompt : MonoBehaviour
     private int placedInRound;
 
     public int socialPoints;
-    public int environmentPoints;
+    public int naturePoints;
     public int economyPoints;
 
-    [SerializeField] private GameObject mesh;
+    [SerializeField] private MeshRenderer mesh;
+    [SerializeField] private Material unbuiltMat;
+    [SerializeField] private Material builtMat;
+
+    private GameManager gameManager;
 
 
 
@@ -23,12 +27,14 @@ public class Prompt : MonoBehaviour
     {
         // Check if there are enough resources to build the prompt, if not destroy it
 
-        if (GameManager.money > neededMoney && GameManager.manpower > neededManpower)
+        gameManager = FindObjectOfType<GameManager>();
+
+        if (gameManager.money > neededMoney && gameManager.manpower > neededManpower)
         {
-            GameManager.money = GameManager.money -= neededMoney;
-            GameManager.manpower = GameManager.manpower -= neededManpower;
-            placedInRound = GameManager.round;
-            //mesh.SetActive(false);
+            gameManager.money = gameManager.money -= neededMoney;
+            gameManager.manpower = gameManager.manpower -= neededManpower;
+            placedInRound = gameManager.round;
+            mesh.material = unbuiltMat;
         }
         else
         {
@@ -40,7 +46,7 @@ public class Prompt : MonoBehaviour
     {
         // Once enough rounds have passed, build the prompt
 
-        if (GameManager.round >= placedInRound + neededRounds && !built)
+        if (gameManager.round >= placedInRound + neededRounds && !built)
         {
             BuildPrompt();
         }
@@ -49,7 +55,7 @@ public class Prompt : MonoBehaviour
     void BuildPrompt()
     {
         built = true;
-        //mesh.SetActive(true);
+        mesh.material = builtMat;
     }
 
     public void DestroyPrompt()

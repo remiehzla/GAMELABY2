@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
+    public int ownedByPlayer;
     public bool hasPrompt;
     public GameObject prompt;
 
@@ -12,15 +13,19 @@ public class Tile : MonoBehaviour
     
     private MeshRenderer meshRenderer;
     private PromptManager promptManager;
+    private GameManager gameManager;
 
     private void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
         promptManager = FindObjectOfType<PromptManager>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     private void Update()
     {
+        // If no prompt is detected, allow for a new prompt to be built
+
         if (prompt == null)
         {
             hasPrompt = false;
@@ -43,10 +48,9 @@ public class Tile : MonoBehaviour
     private void OnMouseDown()
     {
         // If tile is empty, place the selected prompt. If not empty, demolish the prompt.
-
-        if (!hasPrompt)
+        if(ownedByPlayer == gameManager.turn)
         {
-            if (promptManager.selectedPrompt != 0)
+            if (!hasPrompt)
             {
                 hasPrompt = true;
                 promptManager.PlacePrompt(transform);
@@ -54,12 +58,8 @@ public class Tile : MonoBehaviour
             else
             {
                 hasPrompt = false;
+                promptManager.DemolishPrompt(prompt);
             }
-        }
-        else
-        {
-            hasPrompt = false;
-            promptManager.DemolishPrompt(prompt);
         }
     }
 }

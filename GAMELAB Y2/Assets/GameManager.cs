@@ -7,13 +7,13 @@ public class GameManager : MonoBehaviour
 {
     public int playerCount;
 
-    public static int money = 500;
-    public static int manpower = 100;
-    public static int round = 0;
+    public int money;
+    public int manpower;
+    public int round;
     public int turn;
 
     public List<int> socialPointsPerPlayer;
-    public List<int> environmentPointsPerPlayer;
+    public List<int> naturePointsPerPlayer;
     public List<int> economyPointsPerPlayer;
 
     [SerializeField] private Text moneyCounter;
@@ -21,13 +21,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text roundCounter;
     [SerializeField] private Text turnCounter;
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         // Update the UI
@@ -36,5 +34,25 @@ public class GameManager : MonoBehaviour
         manpowerCounter.text = "Manpower: " + manpower.ToString();
         roundCounter.text = "Round: " + round.ToString();
         turnCounter.text = "Turn: " + turn.ToString();
+    }
+
+    public void IncreaseTurn()
+    {
+        // Move to the next player and move to the next round once everyone had their turn
+
+        if (turn < playerCount)
+        {
+            turn += 1;
+        }
+        else
+        {
+            turn = 0;
+            IncreaseRound();
+        }
+    }
+
+    void IncreaseRound()
+    {
+        round += 1;
     }
 }
