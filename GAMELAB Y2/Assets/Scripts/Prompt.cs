@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class Prompt : MonoBehaviour
 {
+    public int ownedByPlayer;
+
     public int neededMoney;
     public int neededManpower;
     public int neededRounds;
 
-    private bool built;
+    public bool built;
     private int placedInRound;
 
-    public int socialPoints;
-    public int naturePoints;
-    public int economyPoints;
+    public int addedSocialPoints;
+    public int addedNaturePoints;
+    public int addedEconomyPoints;
 
     [SerializeField] private MeshRenderer mesh;
     [SerializeField] private Material unbuiltMat;
@@ -54,6 +56,8 @@ public class Prompt : MonoBehaviour
 
     void BuildPrompt()
     {
+        // Change prompt status to being built
+
         built = true;
         mesh.material = builtMat;
     }

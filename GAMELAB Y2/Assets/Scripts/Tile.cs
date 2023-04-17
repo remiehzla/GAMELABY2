@@ -5,6 +5,8 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     public int ownedByPlayer;
+    public PointCounter pointCounter;
+    private bool hasGivenPoints;
     public bool hasPrompt;
     public GameObject prompt;
 
@@ -30,6 +32,23 @@ public class Tile : MonoBehaviour
         {
             hasPrompt = false;
         }
+
+        // Add the points gained from the prompt once every round on turn 0
+
+        if (hasPrompt && prompt.GetComponent<Prompt>().built)
+        {
+            if (gameManager.turn == 0 && !hasGivenPoints)
+            {
+                hasGivenPoints = true;
+                pointCounter.socialPoints = pointCounter.socialPoints += prompt.GetComponent<Prompt>().addedSocialPoints;
+                pointCounter.naturePoints = pointCounter.naturePoints += prompt.GetComponent<Prompt>().addedNaturePoints;
+                pointCounter.economyPoints = pointCounter.economyPoints += prompt.GetComponent<Prompt>().addedEconomyPoints;
+            }
+            else if (gameManager.turn > 0)
+            {
+                hasGivenPoints = false;
+            }
+        }
     }
 
     private void OnMouseEnter()
@@ -48,12 +67,14 @@ public class Tile : MonoBehaviour
     private void OnMouseDown()
     {
         // If tile is empty, place the selected prompt. If not empty, demolish the prompt.
-        if(ownedByPlayer == gameManager.turn)
+        
+        if (ownedByPlayer == gameManager.turn)
         {
             if (!hasPrompt)
             {
                 hasPrompt = true;
                 promptManager.PlacePrompt(transform);
+                prompt.GetComponent<Prompt>().ownedByPlayer = ownedByPlayer;
             }
             else
             {

@@ -128,12 +128,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aaf5a21a67bd0a47a7df7a34e0bf009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ownedByPlayer: 0
   neededMoney: 100
   neededManpower: 20
   neededRounds: 2
-  socialPoints: 3
-  environmentPoints: -1
-  economyPoints: 1
+  built: 0
+  addedSocialPoints: 3
+  addedNaturePoints: 1
+  addedEconomyPoints: 1
   mesh: {fileID: 1995620092552265843}
   unbuiltMat: {fileID: 2100000, guid: 4689e9668e5f4f942ba1716c2c10d9ac, type: 2}
   builtMat: {fileID: 2100000, guid: 03443de01203bf44eb0de0b9ac477da6, type: 2}

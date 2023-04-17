@@ -12,10 +12,6 @@ public class GameManager : MonoBehaviour
     public int round;
     public int turn;
 
-    public List<int> socialPointsPerPlayer;
-    public List<int> naturePointsPerPlayer;
-    public List<int> economyPointsPerPlayer;
-
     [SerializeField] private Text moneyCounter;
     [SerializeField] private Text manpowerCounter;
     [SerializeField] private Text roundCounter;
@@ -53,6 +49,8 @@ public class GameManager : MonoBehaviour
 
     void IncreaseRound()
     {
+        // I hope that if you can read this you can do the math here yourself
+
         round += 1;
     }
 }
