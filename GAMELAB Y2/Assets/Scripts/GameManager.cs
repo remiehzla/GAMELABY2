@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text roundCounter;
     [SerializeField] private Text turnCounter;
 
+    [SerializeField] private GameObject skipButton;
     [SerializeField] private Text endButtonText;
 
     private PromptManager promptManager;
@@ -51,6 +52,15 @@ public class GameManager : MonoBehaviour
         manpowerCounter.text = "Manpower: " + manpower.ToString();
         roundCounter.text = "Round: " + round.ToString();
         turnCounter.text = "Turn: " + turn.ToString();
+
+        if (turn == 0)
+        {
+            skipButton.SetActive(false);
+        }
+        else
+        {
+            skipButton.SetActive(true);
+        }
 
         if (round > maxRounds)
         {
