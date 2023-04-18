@@ -17,9 +17,9 @@ public class Prompt : MonoBehaviour
     public int addedNaturePoints;
     public int addedEconomyPoints;
 
-    [SerializeField] private MeshRenderer mesh;
-    [SerializeField] private Material unbuiltMat;
-    [SerializeField] private Material builtMat;
+    //[SerializeField] private MeshRenderer mesh;
+    //[SerializeField] private Material unbuiltMat;
+    //[SerializeField] private Material builtMat;
 
     private GameManager gameManager;
 
@@ -36,7 +36,7 @@ public class Prompt : MonoBehaviour
             gameManager.money = gameManager.money -= neededMoney;
             gameManager.manpower = gameManager.manpower -= neededManpower;
             placedInRound = gameManager.round;
-            mesh.material = unbuiltMat;
+            //mesh.enabled = false;
         }
         else
         {
@@ -59,7 +59,7 @@ public class Prompt : MonoBehaviour
         // Change prompt status to being built
 
         built = true;
-        mesh.material = builtMat;
+        //mesh.enabled = true;
     }
 
     public void DestroyPrompt()

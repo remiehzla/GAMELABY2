@@ -19,7 +19,7 @@ public class Tile : MonoBehaviour
 
     private void Start()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
+        meshRenderer = GetComponentInChildren<MeshRenderer>();
         promptManager = FindObjectOfType<PromptManager>();
         gameManager = FindObjectOfType<GameManager>();
     }
@@ -72,13 +72,11 @@ public class Tile : MonoBehaviour
         {
             if (!hasPrompt)
             {
-                hasPrompt = true;
                 promptManager.PlacePrompt(transform);
                 prompt.GetComponent<Prompt>().ownedByPlayer = ownedByPlayer;
             }
-            else
+            else if (promptManager.demolishMode)
             {
-                hasPrompt = false;
                 promptManager.DemolishPrompt(prompt);
             }
         }
