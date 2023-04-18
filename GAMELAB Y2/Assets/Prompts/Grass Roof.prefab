@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 3059279893835435452}
   - component: {fileID: 7764139155924132056}
   m_Layer: 0
-  m_Name: GrassRoof
+  m_Name: Grass Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aaf5a21a67bd0a47a7df7a34e0bf009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  promptName: Grass Roof
   ownedByPlayer: 0
   neededMoney: 50
   neededManpower: 20

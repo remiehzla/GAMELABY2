@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 1094839355057306951}
   - component: {fileID: 590913434497273831}
   m_Layer: 0
-  m_Name: BusinessOffice
+  m_Name: Business Office
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aaf5a21a67bd0a47a7df7a34e0bf009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  promptName: Business Office
   ownedByPlayer: 0
   neededMoney: 100
   neededManpower: 50

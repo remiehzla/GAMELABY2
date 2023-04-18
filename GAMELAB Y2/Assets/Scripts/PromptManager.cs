@@ -16,9 +16,18 @@ public class PromptManager : MonoBehaviour
 
     [SerializeField] private GameObject promptUI;
 
-    [SerializeField] private Text promptChoice1Text;
-    [SerializeField] private Text promptChoice2Text;
-    [SerializeField] private Text promptChoice3Text;
+    [SerializeField] private Text promptChoice1TextName;
+    [SerializeField] private Text promptChoice1TextMoney;
+    [SerializeField] private Text promptChoice1TextManpower;
+    [SerializeField] private Text promptChoice1TextRounds;
+    [SerializeField] private Text promptChoice2TextName;
+    [SerializeField] private Text promptChoice2TextMoney;
+    [SerializeField] private Text promptChoice2TextManpower;
+    [SerializeField] private Text promptChoice2TextRounds;
+    [SerializeField] private Text promptChoice3TextName;
+    [SerializeField] private Text promptChoice3TextMoney;
+    [SerializeField] private Text promptChoice3TextManpower;
+    [SerializeField] private Text promptChoice3TextRounds;
 
     private GameManager gameManager;
 
@@ -31,17 +40,57 @@ public class PromptManager : MonoBehaviour
     {
         // Update the UI
 
-        promptChoice1Text.text = promptChoice1.ToString();
-        promptChoice2Text.text = promptChoice2.ToString();
-        promptChoice3Text.text = promptChoice3.ToString();
+        //promptChoice1Text.text = promptChoice1.ToString();
+        //promptChoice2Text.text = promptChoice2.ToString();
+        //promptChoice3Text.text = promptChoice3.ToString();
     }
 
     public void RandomizePrompts()
     {
         promptUI.SetActive(true);
-        promptChoice1 = Random.Range(1, prompts.Count);
-        promptChoice2 = Random.Range(1, prompts.Count);
-        promptChoice3 = Random.Range(1, prompts.Count);
+
+        for(int i = Random.RandomRange(1, prompts.Count); i <= prompts.Count; i++)
+        {
+            string promptNameT1 = prompts[i].GetComponent<Prompt>().promptName;
+            string neededMoneyT1 = prompts[i].GetComponent<Prompt>().neededMoney.ToString();
+            string neededManpowerT1 = prompts[i].GetComponent<Prompt>().neededManpower.ToString();
+            string neededRoundsT1 = prompts[i].GetComponent<Prompt>().neededRounds.ToString();
+            promptChoice1 = i;
+            promptChoice1TextName.text = promptNameT1;
+            promptChoice1TextMoney.text = "Money needed: " + neededMoneyT1;
+            promptChoice1TextManpower.text = "Manpower needed: " + neededManpowerT1;
+            promptChoice1TextRounds.text = "Rounds needed: " + neededRoundsT1;
+            break;
+        }
+        for (int i = Random.RandomRange(1, prompts.Count); i <= prompts.Count; i++)
+        {
+            string promptNameT2 = prompts[i].GetComponent<Prompt>().promptName;
+            string neededMoneyT2 = prompts[i].GetComponent<Prompt>().neededMoney.ToString();
+            string neededManpowerT2 = prompts[i].GetComponent<Prompt>().neededManpower.ToString();
+            string neededRoundsT2 = prompts[i].GetComponent<Prompt>().neededRounds.ToString();
+            promptChoice2 = i;
+            promptChoice2TextName.text = promptNameT2;
+            promptChoice2TextMoney.text = "Money needed: " + neededMoneyT2;
+            promptChoice2TextManpower.text = "Manpower needed: " + neededManpowerT2;
+            promptChoice2TextRounds.text = "Rounds needed: " + neededRoundsT2;
+            break;
+        }
+        for (int i = Random.RandomRange(1, prompts.Count); i <= prompts.Count; i++)
+        {
+            string promptNameT3 = prompts[i].GetComponent<Prompt>().promptName;
+            string neededMoneyT3 = prompts[i].GetComponent<Prompt>().neededMoney.ToString();
+            string neededManpowerT3 = prompts[i].GetComponent<Prompt>().neededManpower.ToString();
+            string neededRoundsT3 = prompts[i].GetComponent<Prompt>().neededRounds.ToString();
+            promptChoice3 = i;
+            promptChoice3TextName.text = promptNameT3;
+            promptChoice3TextMoney.text = "Money needed: " + neededMoneyT3;
+            promptChoice3TextManpower.text = "Manpower needed: " + neededManpowerT3;
+            promptChoice3TextRounds.text = "Rounds needed: " + neededRoundsT3;
+            break;
+        }
+        //promptChoice1 = Random.Range(1, prompts.Count);
+        //promptChoice2 = Random.Range(1, prompts.Count);
+        //promptChoice3 = Random.Range(1, prompts.Count);
     }
 
     public void ChoosePrompt1()

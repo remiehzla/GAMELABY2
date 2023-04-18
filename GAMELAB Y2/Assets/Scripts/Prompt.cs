@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Prompt : MonoBehaviour
 {
+    public string promptName;
+
     public int ownedByPlayer;
 
     public int neededMoney;
@@ -26,6 +28,8 @@ public class Prompt : MonoBehaviour
     void Start()
     {
         // Check if there are enough resources to build the prompt, if not destroy it
+
+        //promptName = gameObject.name;
 
         gameManager = FindObjectOfType<GameManager>();
 
