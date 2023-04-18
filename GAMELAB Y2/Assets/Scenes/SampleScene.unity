@@ -5340,6 +5340,7 @@ MonoBehaviour:
   - {fileID: 7259574233062274136, guid: fe111950b8c9b4242addf21c5365b4ad, type: 3}
   - {fileID: 3205682832048816807, guid: f863d0a5f123b1348b182a3bf1ccea06, type: 3}
   - {fileID: 5615908643112130605, guid: 54af54593491a06429ec9282d94c8ef1, type: 3}
+  - {fileID: 2040877865454089344, guid: cace20684e484fb458bcbe802b431cbc, type: 3}
   selectedPrompt: 0
   demolishMode: 0
   promptChoice1: 0
