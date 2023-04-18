@@ -13,13 +13,11 @@ public class Prompt : MonoBehaviour
     public bool built;
     private int placedInRound;
 
+    [SerializeField] private GameObject constructionIcon;
+
     public int addedSocialPoints;
     public int addedNaturePoints;
     public int addedEconomyPoints;
-
-    //[SerializeField] private MeshRenderer mesh;
-    //[SerializeField] private Material unbuiltMat;
-    //[SerializeField] private Material builtMat;
 
     private GameManager gameManager;
 
@@ -36,7 +34,6 @@ public class Prompt : MonoBehaviour
             gameManager.money = gameManager.money -= neededMoney;
             gameManager.manpower = gameManager.manpower -= neededManpower;
             placedInRound = gameManager.round;
-            //mesh.enabled = false;
         }
         else
         {
@@ -59,7 +56,7 @@ public class Prompt : MonoBehaviour
         // Change prompt status to being built
 
         built = true;
-        //mesh.enabled = true;
+        constructionIcon.SetActive(false);
     }
 
     public void DestroyPrompt()

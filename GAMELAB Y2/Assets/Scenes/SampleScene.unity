@@ -1550,11 +1550,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCount: 4
-  money: 5000
-  manpower: 1000
+  money: 4000
+  manpower: 2000
   round: 1
   turn: 0
-  maxRounds: 3
+  maxRounds: 10
   cameraTransform: {fileID: 836531452}
   cameraFocusDay: {fileID: 1601545230}
   cameraFocusP1: {fileID: 2002313035}
@@ -5333,6 +5333,13 @@ MonoBehaviour:
   - {fileID: 2720527535757199024, guid: ae7f49ad70731754581cd5a335b40a63, type: 3}
   - {fileID: 2977502451206140467, guid: 8fc74a38acfcf514498961717c5499fd, type: 3}
   - {fileID: 7158623070286754544, guid: 50ad063d3afdb9f4f858c8d86c217bd3, type: 3}
+  - {fileID: 4838022079752945760, guid: 50379230b8d3c964495a6cca740a095a, type: 3}
+  - {fileID: 2268151981314916987, guid: 36864bbf6a6a4c74899ceb2fd7c58a79, type: 3}
+  - {fileID: 2287811104638646776, guid: 97f6a4960a14a9644afbec59130eec3e, type: 3}
+  - {fileID: 2374973702770139237, guid: f979b844e8514b74aa92558f7960aadc, type: 3}
+  - {fileID: 7259574233062274136, guid: fe111950b8c9b4242addf21c5365b4ad, type: 3}
+  - {fileID: 3205682832048816807, guid: f863d0a5f123b1348b182a3bf1ccea06, type: 3}
+  - {fileID: 5615908643112130605, guid: 54af54593491a06429ec9282d94c8ef1, type: 3}
   selectedPrompt: 0
   demolishMode: 0
   promptChoice1: 0
