@@ -43,6 +43,8 @@ public class Tile : MonoBehaviour
                 pointCounter.socialPoints = pointCounter.socialPoints += prompt.GetComponent<Prompt>().addedSocialPoints;
                 pointCounter.naturePoints = pointCounter.naturePoints += prompt.GetComponent<Prompt>().addedNaturePoints;
                 pointCounter.economyPoints = pointCounter.economyPoints += prompt.GetComponent<Prompt>().addedEconomyPoints;
+                pointCounter.totalPoints = pointCounter.totalPoints += prompt.GetComponent<Prompt>().addedSocialPoints += 
+                    prompt.GetComponent<Prompt>().addedNaturePoints += prompt.GetComponent<Prompt>().addedEconomyPoints;
             }
             else if (gameManager.turn > 0)
             {

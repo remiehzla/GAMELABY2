@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class GameManager : MonoBehaviour
     public int manpower;
     public int round;
     public int turn;
+
+    public int maxRounds;
 
     [SerializeField] private Transform cameraTransform;
 
@@ -29,6 +32,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text roundCounter;
     [SerializeField] private Text turnCounter;
 
+    [SerializeField] private Text endButtonText;
+
     private PromptManager promptManager;
 
     private bool isFading;
@@ -46,26 +51,35 @@ public class GameManager : MonoBehaviour
         manpowerCounter.text = "Manpower: " + manpower.ToString();
         roundCounter.text = "Round: " + round.ToString();
         turnCounter.text = "Turn: " + turn.ToString();
+
+        if (round > maxRounds)
+        {
+            endButtonText.text = "Back to menu";
+        }
     }
 
     public void IncreaseTurn()
     {
         // Move to the next player and move to the next round once everyone had their turn
+        
         if (!isFading)
         {
-            isFading = true;
-            if (turn < playerCount)
+            if (round <= maxRounds)
             {
+                isFading = true;
                 turn += 1;
+                if (turn > playerCount)
+                {
+                    turn = 0;
+                    Invoke("IncreaseRound", 1);
+                }
+                Invoke("FadeScreen", 1);
+                Invoke("TransferTurn", 2);
             }
             else
             {
-                turn = 0;
-                IncreaseRound();
-            }
-            Invoke("FadeScreen", 1);
-            Invoke("TransferTurn", 2);
-            
+                EndGame();
+            }         
         }
     }
 
@@ -113,5 +127,12 @@ public class GameManager : MonoBehaviour
         // I hope that if you read this you can do the math here yourself
 
         round += 1;
+    }
+
+    void EndGame()
+    {
+        // Restarts the scene, if that wasn't clear already
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

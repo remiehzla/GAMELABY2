@@ -51,8 +51,8 @@ MonoBehaviour:
   neededRounds: 1
   built: 0
   addedSocialPoints: 15
-  addedNaturePoints: 30
-  addedEconomyPoints: 0
+  addedNaturePoints: 35
+  addedEconomyPoints: 5
 --- !u!1 &8939725277718345218
 GameObject:
   m_ObjectHideFlags: 0

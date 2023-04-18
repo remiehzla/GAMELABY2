@@ -1554,6 +1554,7 @@ MonoBehaviour:
   manpower: 1000
   round: 1
   turn: 0
+  maxRounds: 3
   cameraTransform: {fileID: 836531452}
   cameraFocusDay: {fileID: 1601545230}
   cameraFocusP1: {fileID: 2002313035}
@@ -1566,6 +1567,7 @@ MonoBehaviour:
   manpowerCounter: {fileID: 1063922907}
   roundCounter: {fileID: 1330588728}
   turnCounter: {fileID: 694309166}
+  endButtonText: {fileID: 1532568970}
 --- !u!4 &302978415
 Transform:
   m_ObjectHideFlags: 0
@@ -6558,7 +6560,7 @@ PrefabInstance:
     - target: {fileID: 9018621373584626118, guid: 4c570856fc9e0814cacd5977a7db5a7e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 9018621373584626118, guid: 4c570856fc9e0814cacd5977a7db5a7e,
         type: 3}
@@ -7089,7 +7091,7 @@ PrefabInstance:
     - target: {fileID: 9018621373584626118, guid: 4c570856fc9e0814cacd5977a7db5a7e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 9018621373584626118, guid: 4c570856fc9e0814cacd5977a7db5a7e,
         type: 3}
@@ -9087,9 +9089,15 @@ MonoBehaviour:
   socialPoints: 0
   naturePoints: 0
   economyPoints: 0
+  totalPoints: 0
+  panel: {fileID: 397195330}
   socialPointText: {fileID: 2131849718}
   naturePointText: {fileID: 1902814131}
   economyPointText: {fileID: 2784139}
+  totalPointText: {fileID: 1141470589}
+  opponent1: {fileID: 1646792600}
+  opponent2: {fileID: 1580107364}
+  opponent3: {fileID: 1409132194}
 --- !u!4 &1272070223
 Transform:
   m_ObjectHideFlags: 0
@@ -10164,8 +10172,8 @@ Transform:
   - {fileID: 104870828}
   - {fileID: 371498881}
   - {fileID: 499075894}
-  - {fileID: 2130124263}
   - {fileID: 463404543}
+  - {fileID: 2130124263}
   - {fileID: 2123659746}
   - {fileID: 1885910062}
   - {fileID: 1843793300}
@@ -10319,8 +10327,8 @@ Transform:
   - {fileID: 2090396480}
   - {fileID: 1343137198}
   - {fileID: 2064145666}
-  - {fileID: 1791833841}
   - {fileID: 1655002170}
+  - {fileID: 1791833841}
   m_Father: {fileID: 351622005}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10677,9 +10685,15 @@ MonoBehaviour:
   socialPoints: 0
   naturePoints: 0
   economyPoints: 0
+  totalPoints: 0
+  panel: {fileID: 290790938}
   socialPointText: {fileID: 1982214238}
   naturePointText: {fileID: 975468465}
   economyPointText: {fileID: 1253203424}
+  totalPointText: {fileID: 480434159}
+  opponent1: {fileID: 1646792600}
+  opponent2: {fileID: 1272070222}
+  opponent3: {fileID: 1580107364}
 --- !u!4 &1409132195
 Transform:
   m_ObjectHideFlags: 0
@@ -11486,9 +11500,15 @@ MonoBehaviour:
   socialPoints: 0
   naturePoints: 0
   economyPoints: 0
+  totalPoints: 0
+  panel: {fileID: 857800775}
   socialPointText: {fileID: 192891350}
   naturePointText: {fileID: 173485551}
   economyPointText: {fileID: 1245008364}
+  totalPointText: {fileID: 1400611267}
+  opponent1: {fileID: 1646792600}
+  opponent2: {fileID: 1272070222}
+  opponent3: {fileID: 1409132194}
 --- !u!4 &1580107365
 Transform:
   m_ObjectHideFlags: 0
@@ -12117,9 +12137,15 @@ MonoBehaviour:
   socialPoints: 0
   naturePoints: 0
   economyPoints: 0
+  totalPoints: 0
+  panel: {fileID: 1200992119}
   socialPointText: {fileID: 1123851658}
   naturePointText: {fileID: 1334138534}
   economyPointText: {fileID: 1143630502}
+  totalPointText: {fileID: 872408625}
+  opponent1: {fileID: 1272070222}
+  opponent2: {fileID: 1580107364}
+  opponent3: {fileID: 1409132194}
 --- !u!4 &1649152378 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9018621373584626118, guid: 4c570856fc9e0814cacd5977a7db5a7e,
@@ -13288,7 +13314,7 @@ PrefabInstance:
     - target: {fileID: 9018621373584626118, guid: 4c570856fc9e0814cacd5977a7db5a7e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 9018621373584626118, guid: 4c570856fc9e0814cacd5977a7db5a7e,
         type: 3}
