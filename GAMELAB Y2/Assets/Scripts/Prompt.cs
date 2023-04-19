@@ -53,6 +53,15 @@ public class Prompt : MonoBehaviour
         {
             BuildPrompt();
         }
+
+        if (built)
+        {
+            constructionIcon.SetActive(false);
+        }
+        else
+        {
+            constructionIcon.SetActive(true);
+        }
     }
 
     void BuildPrompt()
@@ -60,7 +69,6 @@ public class Prompt : MonoBehaviour
         // Change prompt status to being built
 
         built = true;
-        constructionIcon.SetActive(false);
     }
 
     public void DestroyPrompt()

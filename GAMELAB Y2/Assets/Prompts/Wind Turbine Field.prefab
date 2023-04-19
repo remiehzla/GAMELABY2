@@ -186,7 +186,7 @@ MonoBehaviour:
   constructionIcon: {fileID: 420284985951307878}
   addedSocialPoints: -40
   addedNaturePoints: 70
-  addedEconomyPoints: -30
+  addedEconomyPoints: -10
 --- !u!1001 &5053077604601952231
 PrefabInstance:
   m_ObjectHideFlags: 0

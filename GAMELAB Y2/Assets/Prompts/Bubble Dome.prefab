@@ -55,7 +55,7 @@ MonoBehaviour:
   constructionIcon: {fileID: 5203944616808713741}
   addedSocialPoints: 15
   addedNaturePoints: 35
-  addedEconomyPoints: -5
+  addedEconomyPoints: 0
 --- !u!1 &5203944616808713741
 GameObject:
   m_ObjectHideFlags: 0
