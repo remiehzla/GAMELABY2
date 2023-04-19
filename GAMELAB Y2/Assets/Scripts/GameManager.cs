@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
         moneyCounter.text = "Money: " + money.ToString();
         manpowerCounter.text = "Manpower: " + manpower.ToString();
         roundCounter.text = "Round: " + round.ToString();
-        turnCounter.text = "Turn: " + turn.ToString();
+        turnCounter.text = "Player: " + turn.ToString();
 
         if (turn == 0)
         {
