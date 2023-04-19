@@ -70,7 +70,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2576306473658392861}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 88.7, y: 25, z: -11.1}
+  m_LocalPosition: {x: 0, y: 25, z: -100}
   m_LocalScale: {x: 15, y: 15, z: 15}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -154,7 +154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7778063697274465042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1387.928, y: 0, z: 386.52673}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -175,15 +175,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aaf5a21a67bd0a47a7df7a34e0bf009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  promptName: Hotel
   ownedByPlayer: 0
-  neededMoney: 0
-  neededManpower: 0
-  neededRounds: 1
+  neededMoney: 150
+  neededManpower: 40
+  neededRounds: 2
   built: 0
   constructionIcon: {fileID: 764254055331026732}
-  addedSocialPoints: 0
-  addedNaturePoints: 0
-  addedEconomyPoints: 0
+  addedSocialPoints: 20
+  addedNaturePoints: -5
+  addedEconomyPoints: 40
 --- !u!1001 &6198516459418417579
 PrefabInstance:
   m_ObjectHideFlags: 0
