@@ -110,8 +110,10 @@ public class TimeController : MonoBehaviour
         sunLight.intensity = Mathf.Lerp(0, maxSunLightIntensity, lightChangeCurve.Evaluate(dotProduct));
         moonLight.intensity = Mathf.Lerp(maxMoonLightIntensity, 0, lightChangeCurve.Evaluate(dotProduct));
 
-        RenderSettings.ambientLight = Color.Lerp(nightAmbientLight, dayAmbientLight, 
-            lightChangeCurve.Evaluate(dotProduct));
+        RenderSettings.ambientLight = Color.Lerp(nightAmbientLight, dayAmbientLight, dotProduct);
+
+        Debug.Log($"Dot Product = {dotProduct}, Light Change Curve Value = {lightChangeCurve.Evaluate(dotProduct)}, " +
+            $"Sun Intensity = {sunLight.intensity}, Moon Intensity = {moonLight.intensity}");
     }
 
     // Time difference formula
