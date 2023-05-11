@@ -5601,6 +5601,7 @@ MonoBehaviour:
   - {fileID: 5615908643112130605, guid: 54af54593491a06429ec9282d94c8ef1, type: 3}
   - {fileID: 2040877865454089344, guid: cace20684e484fb458bcbe802b431cbc, type: 3}
   - {fileID: 3830718827432798897, guid: ad645b2a72ea4bf44a34d005e22baf7b, type: 3}
+  - {fileID: 7588383643491445725, guid: 22047f56896d4ba4888ec810dc09acc9, type: 3}
   selectedPrompt: 0
   demolishMode: 0
   promptChoice1: 0
