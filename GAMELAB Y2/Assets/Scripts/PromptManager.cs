@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
+using Unity.Services.Analytics;
+using Unity.Services.Core;
 
 public class PromptManager : MonoBehaviour
 {
@@ -31,8 +34,24 @@ public class PromptManager : MonoBehaviour
 
     private GameManager gameManager;
 
+
+    async void GetAnalytics()
+    {
+        try
+        {
+            await UnityServices.InitializeAsync();
+            List<string> consentIdentifiers = await AnalyticsService.Instance.CheckForRequiredConsents();
+        }
+        catch (ConsentCheckException e)
+        {
+            // Something went wrong when checking the GeoIP, check the e.Reason and handle appropriately.
+        }
+    }
+
+
     private void Start()
     {
+        GetAnalytics();
         gameManager = FindObjectOfType<GameManager>();
     }
 
@@ -155,6 +174,11 @@ public class PromptManager : MonoBehaviour
 
         if (!promptUI.active)
         {
+            Dictionary<string, object> parameters = new Dictionary<string, object>()
+            {
+                { "demolishedPrompts", + 1 },
+            };
+            AnalyticsService.Instance.CustomData("countDemolishedPrompts", parameters);
             prompt.GetComponent<Prompt>().DestroyPrompt();
             selectedPrompt = 0;
             demolishMode = false;

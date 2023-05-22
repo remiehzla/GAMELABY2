@@ -873,11 +873,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 
+  cloudProjectId: 7c90e690-f02c-4ebc-a407-26bce8dcaabc
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: GameLab Y2
+  organizationId: noah-gamecreator
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
