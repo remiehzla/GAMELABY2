@@ -139,7 +139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2691718115717551866}
   - component: {fileID: 2474755936597419098}
-  - component: {fileID: 1093705072291695857}
+  - component: {fileID: 12603966266026809}
   m_Layer: 0
   m_Name: Theme Park
   m_TagString: Untagged
@@ -186,7 +186,7 @@ MonoBehaviour:
   addedSocialPoints: 80
   addedNaturePoints: -20
   addedEconomyPoints: 80
---- !u!95 &1093705072291695857
+--- !u!95 &12603966266026809
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -196,7 +196,7 @@ Animator:
   m_GameObject: {fileID: 7588383643491445725}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 03a57456aa682d54190258ebabbc3ace, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9a76f0ea9e79207438d52d75e3706269, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -272,6 +272,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Themepark
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846729089206435994, guid: 7167c217e33e1d644a94082473608304,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846729089206435994, guid: 7167c217e33e1d644a94082473608304,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846729089206435994, guid: 7167c217e33e1d644a94082473608304,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846729089206435994, guid: 7167c217e33e1d644a94082473608304,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7167c217e33e1d644a94082473608304, type: 3}
