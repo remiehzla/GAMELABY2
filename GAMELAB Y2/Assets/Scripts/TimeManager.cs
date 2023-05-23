@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TimeManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     private GameManager gameManager;
 
     [SerializeField] private float targetRot;
@@ -21,8 +17,8 @@ public class TimeManager : MonoBehaviour
         targetRot = 0f;
     }
 
-    // Update is called once per frame
-    void Update()
+    //Each turn takes place during night time, whereas the scoreboard is displayed during day time
+   void Update()
     {
         if (gameManager.round <= gameManager.maxRounds)
         {
@@ -43,10 +39,5 @@ public class TimeManager : MonoBehaviour
             sunLight.transform.rotation = Quaternion.Lerp(sunLight.transform.rotation, 
                 targetQuaternion, rotSpeed * Time.deltaTime);
         }
-    }
-
-    public void DayNightCycle()
-    { 
-        
     }
 }
