@@ -68,6 +68,8 @@ public class PromptManager : MonoBehaviour
     {
         promptUI.SetActive(true);
 
+        // Choose tile card screen
+
         for(int i = Random.RandomRange(1, prompts.Count); i <= prompts.Count; i++)
         {
             string promptNameT1 = prompts[i].GetComponent<Prompt>().promptName;
@@ -111,6 +113,8 @@ public class PromptManager : MonoBehaviour
         //promptChoice2 = Random.Range(1, prompts.Count);
         //promptChoice3 = Random.Range(1, prompts.Count);
     }
+
+    // Chosen prompt placement
 
     public void ChoosePrompt1()
     {
@@ -160,8 +164,10 @@ public class PromptManager : MonoBehaviour
         {
             GameObject prompt = Instantiate(prompts[selectedPrompt], location.position, Quaternion.identity);
             prompt.transform.parent = location;
+
             location.GetComponent<Tile>().prompt = prompt;
             location.GetComponent<Tile>().hasPrompt = true;
+
             selectedPrompt = 0;
             demolishMode = false;
             gameManager.IncreaseTurn();

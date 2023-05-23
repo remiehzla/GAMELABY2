@@ -5,10 +5,12 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     public int ownedByPlayer;
-    public PointCounter pointCounter;
+
     private bool hasGivenPoints;
     public bool hasPrompt;
+
     public GameObject prompt;
+    public PointCounter pointCounter;
 
     [SerializeField] private Material defaultMaterial;
     [SerializeField] private Material selectedMaterial;

@@ -5,9 +5,11 @@ using UnityEngine;
 public class RandomEvents : MonoBehaviour
 {
     private GameManager gameManager;
+    private Tile existingPrompt;
+    
 
     // One event is always neutral
-    private int numberOfEvents = 7;
+    private int numberOfEvents = 6;
 
     void Update()
     {
@@ -37,8 +39,6 @@ public class RandomEvents : MonoBehaviour
                     case 5:
                         NoEvent();
                         break; 
-                    case 6:
-                        break;
 
                 }
             }
@@ -47,31 +47,40 @@ public class RandomEvents : MonoBehaviour
 
     private void EarthquakeEvent()
     {   
-
+        // Choose a random tile, may it have a prompt built or not
+        // Play a shaking + move down animation
+        // Destory tile
     }
     
     private void BadConstructionEvent()
     { 
-
+        // Choose a random prompt
+        // Play smoke particle effect
+        // Destroy it
     }
 
     private void FireEvent()
     { 
-
+        // Choose a random prompt
+        // Play fire particle effect
+        // Destroy it
     }
 
     private void StormEvent()
     { 
-
+        // Choose a random prompt
+        // Play wind patricle effect
+        // Destroy it
     }
 
     private void CounterClockTurnsEvent()
     { 
-
+        // Counter clock turns
+        // Game goes on
     }
 
     private void NoEvent()
     {
-
+        // Do nothing
     }
 }
