@@ -13458,10 +13458,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff23d37d55edbc4cace65a36d2af69b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  map1: {fileID: 1977471352}
-  map2: {fileID: 351622004}
-  map3: {fileID: 18750907}
-  map4: {fileID: 1399093483}
+  map1: {fileID: 1390263878}
+  map2: {fileID: 671103965}
+  map3: {fileID: 671103965}
+  map4: {fileID: 172131291}
+  numberOfTiles: 22
+  randomTile: 0
+  eventTrigger: 0
+  randomNumber: 0
 --- !u!1 &1694912594
 GameObject:
   m_ObjectHideFlags: 0
