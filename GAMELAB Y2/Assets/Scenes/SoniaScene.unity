@@ -13466,7 +13466,7 @@ MonoBehaviour:
   randomTile: 0
   currentTurn: 0
   randomEvent: 0
-  totalEvents: 2
+  totalEvents: 8
 --- !u!1 &1694912594
 GameObject:
   m_ObjectHideFlags: 0
