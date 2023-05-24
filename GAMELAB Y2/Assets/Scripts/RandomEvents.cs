@@ -18,7 +18,8 @@ public class RandomEvents : MonoBehaviour
 
     // Choosing events
     [SerializeField] private int currentTurn;
-    [SerializeField] private int randomNumber;
+    [SerializeField] private int randomEvent;
+    [SerializeField] private int totalEvents;
 
     private void Start()
     {
@@ -28,21 +29,20 @@ public class RandomEvents : MonoBehaviour
     void Update()
     {
         if (currentTurn != gameManager.turn)
-            //Invoke("ChooseEvent", 1);
             ChooseEvent();
-        currentTurn = gameManager.turn;
     }
 
     private void ChooseEvent()
     {
-        int randomNumber = Random.Range(0, 2);
+        randomEvent = Random.Range(0, totalEvents);
+        currentTurn = gameManager.turn;
 
         if (gameManager.round <= gameManager.maxRounds)
         {
             if (gameManager.turn != 0)
             {
                 // The events
-                switch (randomNumber)
+                switch (randomEvent)
                 {
                     case 0:
                         NoEvent();
