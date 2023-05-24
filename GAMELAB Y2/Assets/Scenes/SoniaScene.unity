@@ -13465,8 +13465,8 @@ MonoBehaviour:
   numberOfTiles: 22
   randomTile: 0
   currentTurn: 0
-  randomNumber: 0
-  totalEvents: 6
+  randomEvent: 0
+  totalEvents: 2
 --- !u!1 &1694912594
 GameObject:
   m_ObjectHideFlags: 0

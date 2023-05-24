@@ -51,6 +51,9 @@ public class RandomEvents : MonoBehaviour
                     case 1:
                         Invoke("EarthquakeEvent", 1);
                         break;
+                    case 2:
+                        Invoke("NaturalEvent", 1);
+                        break;
                 }
             }
         }
@@ -60,7 +63,7 @@ public class RandomEvents : MonoBehaviour
     {
         // Choose a random tile, may it have a prompt built or not
         // Play a shaking + move down animation
-        // Destory tile
+        // Replace texture/disable tile
 
         switch (gameManager.turn)
         {
@@ -75,18 +78,52 @@ public class RandomEvents : MonoBehaviour
             case 2:
                 {
                     // P2
+                    randomTile = Random.Range(0, numberOfTiles);
+                    map2.transform.GetChild(randomTile).gameObject.SetActive(false);
+
                     break;
                 }
             case 3:
                 {
                     // P3
+                    randomTile = Random.Range(0, numberOfTiles);
+                    map3.transform.GetChild(randomTile).gameObject.SetActive(false);
+
                     break;
                 }
             case 4:
                 {
                     // P4
+                    randomTile = Random.Range(0, numberOfTiles);
+                    map4.transform.GetChild(randomTile).gameObject.SetActive(false);
+
                     break;
                 }
+        }
+    }
+
+    private void NaturalEvent()
+    {
+        // Play fire OR water particle system
+        // Destroy building
+
+        switch (gameManager.turn)
+        {
+            case 1:
+                // P1
+                break;
+
+            case 2:
+                // P2
+                break;
+
+            case 3:
+                // P3
+                break;
+
+            case 4:
+                // P3
+                break;
         }
     }
 
