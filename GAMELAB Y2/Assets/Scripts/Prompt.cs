@@ -33,7 +33,7 @@ public class Prompt : MonoBehaviour
 
         gameManager = FindObjectOfType<GameManager>();
 
-        if (gameManager.money > neededMoney && gameManager.manpower > neededManpower)
+        if (gameManager.money >= neededMoney && gameManager.manpower >= neededManpower)
         {
             gameManager.money = gameManager.money -= neededMoney;
             gameManager.manpower = gameManager.manpower -= neededManpower;

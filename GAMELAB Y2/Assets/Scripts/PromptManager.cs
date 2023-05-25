@@ -13,6 +13,9 @@ public class PromptManager : MonoBehaviour
     public int selectedPrompt;
     public bool demolishMode;
 
+    [SerializeField] private int demolishMoney;
+    [SerializeField] private int demolishManpower;
+
     public int promptChoice1;
     public int promptChoice2;
     public int promptChoice3;
@@ -70,7 +73,7 @@ public class PromptManager : MonoBehaviour
 
         // Choose tile card screen
 
-        for(int i = Random.RandomRange(1, prompts.Count); i <= prompts.Count; i++)
+        for(int i = Random.Range(1, prompts.Count); i <= prompts.Count; i++)
         {
             string promptNameT1 = prompts[i].GetComponent<Prompt>().promptName;
             string neededMoneyT1 = prompts[i].GetComponent<Prompt>().neededMoney.ToString();
@@ -83,7 +86,7 @@ public class PromptManager : MonoBehaviour
             promptChoice1TextRounds.text = "Rounds needed: " + neededRoundsT1;
             break;
         }
-        for (int i = Random.RandomRange(1, prompts.Count); i <= prompts.Count; i++)
+        for (int i = Random.Range(1, prompts.Count); i <= prompts.Count; i++)
         {
             string promptNameT2 = prompts[i].GetComponent<Prompt>().promptName;
             string neededMoneyT2 = prompts[i].GetComponent<Prompt>().neededMoney.ToString();
@@ -96,7 +99,7 @@ public class PromptManager : MonoBehaviour
             promptChoice2TextRounds.text = "Rounds needed: " + neededRoundsT2;
             break;
         }
-        for (int i = Random.RandomRange(1, prompts.Count); i <= prompts.Count; i++)
+        for (int i = Random.Range(1, prompts.Count); i <= prompts.Count; i++)
         {
             string promptNameT3 = prompts[i].GetComponent<Prompt>().promptName;
             string neededMoneyT3 = prompts[i].GetComponent<Prompt>().neededMoney.ToString();
@@ -109,9 +112,12 @@ public class PromptManager : MonoBehaviour
             promptChoice3TextRounds.text = "Rounds needed: " + neededRoundsT3;
             break;
         }
-        //promptChoice1 = Random.Range(1, prompts.Count);
-        //promptChoice2 = Random.Range(1, prompts.Count);
-        //promptChoice3 = Random.Range(1, prompts.Count);
+
+        if (promptChoice1 == promptChoice2 || promptChoice2 == promptChoice3 || promptChoice3 == promptChoice1 
+            || promptChoice1 == promptChoice2 && promptChoice1 == promptChoice3)
+        {
+            RandomizePrompts();
+        }
     }
 
     // Chosen prompt placement
@@ -160,8 +166,13 @@ public class PromptManager : MonoBehaviour
     {
         // Place down the prompt selected from the list on the tile that called the function
 
-        if (!promptUI.active)
+        if (!promptUI.activeInHierarchy)
         {
+            Dictionary<string, object> parameters = new Dictionary<string, object>()
+            {
+                { "placedPrompts", + 1 },
+            };
+            AnalyticsService.Instance.CustomData("countPlacedPrompts", parameters);
             GameObject prompt = Instantiate(prompts[selectedPrompt], location.position, Quaternion.identity);
             prompt.transform.parent = location;
 
@@ -178,17 +189,25 @@ public class PromptManager : MonoBehaviour
     {
         // Demolish the prompt selected by the tile that called the function
 
-        if (!promptUI.active)
+        if (!promptUI.activeInHierarchy)
         {
-            Dictionary<string, object> parameters = new Dictionary<string, object>()
+            if (!demolishMode || gameManager.money >= demolishMoney && gameManager.manpower >= demolishManpower)
             {
-                { "demolishedPrompts", + 1 },
-            };
-            AnalyticsService.Instance.CustomData("countDemolishedPrompts", parameters);
-            prompt.GetComponent<Prompt>().DestroyPrompt();
-            selectedPrompt = 0;
-            demolishMode = false;
-            gameManager.IncreaseTurn();
+                if (demolishMode)
+                {
+                    gameManager.money = gameManager.money -= demolishMoney;
+                    gameManager.manpower = gameManager.manpower -= demolishManpower;
+                }
+                Dictionary<string, object> parameters = new Dictionary<string, object>()
+                {
+                    { "demolishedPrompts", + 1 },
+                };
+                AnalyticsService.Instance.CustomData("countDemolishedPrompts", parameters);
+                prompt.GetComponent<Prompt>().DestroyPrompt();
+                selectedPrompt = 0;
+                demolishMode = false;
+                gameManager.IncreaseTurn();
+            }
         }
     }
 }

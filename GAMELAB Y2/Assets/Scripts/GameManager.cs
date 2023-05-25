@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
+using Unity.Services.Analytics;
+using Unity.Services.Core;
 
 public class GameManager : MonoBehaviour
 {
@@ -39,8 +42,22 @@ public class GameManager : MonoBehaviour
 
     private bool isFading;
 
+    async void GetAnalytics()
+    {
+        try
+        {
+            await UnityServices.InitializeAsync();
+            List<string> consentIdentifiers = await AnalyticsService.Instance.CheckForRequiredConsents();
+        }
+        catch (ConsentCheckException e)
+        {
+            // Something went wrong when checking the GeoIP, check the e.Reason and handle appropriately.
+        }
+    }
+
     void Start()
     {
+        GetAnalytics();
         promptManager = FindObjectOfType<PromptManager>();
     }
 
@@ -143,6 +160,11 @@ public class GameManager : MonoBehaviour
     {
         // Restarts the scene, if that wasn't clear already
 
+        Dictionary<string, object> parameters = new Dictionary<string, object>()
+            {
+                { "gamesFinished", + 1 },
+            };
+        AnalyticsService.Instance.CustomData("gameFinished", parameters);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
