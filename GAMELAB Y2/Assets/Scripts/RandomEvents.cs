@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
+using Unity.Services.Analytics;
+using Unity.Services.Core;
 
 public class RandomEvents : MonoBehaviour
 {
@@ -21,8 +24,22 @@ public class RandomEvents : MonoBehaviour
     [SerializeField] private int randomEvent;
     [SerializeField] private int totalEvents;
 
+    async void GetAnalytics()
+    {
+        try
+        {
+            await UnityServices.InitializeAsync();
+            List<string> consentIdentifiers = await AnalyticsService.Instance.CheckForRequiredConsents();
+        }
+        catch (ConsentCheckException e)
+        {
+            // Something went wrong when checking the GeoIP, check the e.Reason and handle appropriately.
+        }
+    }
+
     private void Start()
     {
+        GetAnalytics();
         gameManager = FindObjectOfType<GameManager>();
     }
 
@@ -41,6 +58,11 @@ public class RandomEvents : MonoBehaviour
         {
             if (gameManager.turn != 0)
             {
+                Dictionary<string, object> parameters = new Dictionary<string, object>()
+                        {
+                            { "randomEvents", + 1 },
+                        };
+
                 // The events
                 switch (randomEvent)
                 {
@@ -50,9 +72,11 @@ public class RandomEvents : MonoBehaviour
 
                     case 1:
                         Invoke("EarthquakeEvent", 1);
+                        AnalyticsService.Instance.CustomData("countRandomEvents", parameters);
                         break;
                     case 2:
                         Invoke("NaturalEvent", 1);
+                        AnalyticsService.Instance.CustomData("countRandomEvents", parameters);
                         break;
                 }
             }
