@@ -13491,8 +13491,9 @@ MonoBehaviour:
   randomTile: 0
   currentTurn: 0
   randomEvent: 0
-  totalEvents: 3
+  totalEvents: 6
   promptFound: 0
+  counterClockedTurns: 0
 --- !u!1 &1694912594
 GameObject:
   m_ObjectHideFlags: 0

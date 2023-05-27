@@ -27,8 +27,10 @@ public class RandomEvents : MonoBehaviour
     [SerializeField] private int totalEvents;
 
     // Natural events
-    //[SerializeField] private GameObject currentTile;
     [SerializeField] public bool promptFound = false;
+
+    // Counterclocking turns
+    public bool counterClockedTurns = false;
 
     async void GetAnalytics()
     {
@@ -81,9 +83,22 @@ public class RandomEvents : MonoBehaviour
                         Invoke("EarthquakeEvent", 1);
                         AnalyticsService.Instance.CustomData("countRandomEvents", parameters);
                         break;
+
                     case 2:
                         Invoke("NaturalEvent", 1);
                         AnalyticsService.Instance.CustomData("countRandomEvents", parameters);
+                        break;
+
+                    case 3:
+                        Invoke("CounterClockTurns", 1);
+                        break;
+
+                    case 4:
+                        Invoke("IncreaseEconomy", 1);
+                        break;
+
+                    case 5:
+                        Invoke("DecreaseEconomy", 1);
                         break;
                 }
             }
@@ -132,9 +147,6 @@ public class RandomEvents : MonoBehaviour
 
     private void NaturalEvent()
     {
-        // Play fire OR water particle system
-        // Destroy building
-
         switch (gameManager.turn)
         {
             case 1:
@@ -201,6 +213,20 @@ public class RandomEvents : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    private void CounterClockTurns()
+    {
+        counterClockedTurns = true;
+    }
+
+    private void IncreaseEconomy()
+    {
+        gameManager.money += gameManager.money + Random.Range(10, 1000);
+    } 
+    private void DecreaseEconomy()
+    {
+        gameManager.money -= gameManager.money - Random.Range(10, 1000);
     }
 
     public IEnumerator DisableBuilding(GameObject smokeEffectInstance)

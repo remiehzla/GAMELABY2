@@ -36,6 +36,7 @@ public class PromptManager : MonoBehaviour
     [SerializeField] private Text promptChoice3TextRounds;
 
     private GameManager gameManager;
+    private RandomEvents randomEvents;
 
 
     async void GetAnalytics()
@@ -56,6 +57,7 @@ public class PromptManager : MonoBehaviour
     {
         GetAnalytics();
         gameManager = FindObjectOfType<GameManager>();
+        randomEvents = FindObjectOfType<RandomEvents>();
     }
 
     void Update()
@@ -145,7 +147,10 @@ public class PromptManager : MonoBehaviour
     public void ChooseSkip()
     {
         promptUI.SetActive(false);
-        gameManager.IncreaseTurn();
+        if (randomEvents.counterClockedTurns)
+            gameManager.DecreaseTurn();
+        else
+            gameManager.IncreaseTurn();
     }
 
     public void ChangePromptNumber()
@@ -182,7 +187,11 @@ public class PromptManager : MonoBehaviour
 
             selectedPrompt = 0;
             demolishMode = false;
-            gameManager.IncreaseTurn();
+
+            if (randomEvents.counterClockedTurns)
+                gameManager.DecreaseTurn();
+            else
+                gameManager.IncreaseTurn();
         }
     }
 
@@ -207,7 +216,10 @@ public class PromptManager : MonoBehaviour
                 prompt.GetComponent<Prompt>().DestroyPrompt();
                 selectedPrompt = 0;
                 demolishMode = false;
-                gameManager.IncreaseTurn();
+                if (randomEvents.counterClockedTurns)
+                    gameManager.DecreaseTurn();
+                else
+                    gameManager.IncreaseTurn();
             }
         }
     }

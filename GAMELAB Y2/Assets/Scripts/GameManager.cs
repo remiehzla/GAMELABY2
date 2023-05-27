@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
 
     private PromptManager promptManager;
 
+    private RandomEvents randomEvents;
+
     private bool isFading;
 
     async void GetAnalytics()
@@ -59,6 +61,7 @@ public class GameManager : MonoBehaviour
     {
         GetAnalytics();
         promptManager = FindObjectOfType<PromptManager>();
+        randomEvents = FindObjectOfType<RandomEvents>();
     }
 
     void Update()
@@ -94,7 +97,7 @@ public class GameManager : MonoBehaviour
             if (round <= maxRounds)
             {
                 isFading = true;
-                turn += 1;
+                turn++;
                 if (turn > playerCount)
                 {
                     turn = 0;
@@ -109,6 +112,31 @@ public class GameManager : MonoBehaviour
             }         
         }
     }
+
+    public void DecreaseTurn()
+    {
+        if (!isFading)
+        {
+            if (round <= maxRounds)
+            {
+                isFading = true;
+                turn--;
+                if (turn <= 0)
+                {
+                    turn = 0;
+                    randomEvents.counterClockedTurns = false;
+                    Invoke("IncreaseRound", 1);
+                }
+                Invoke("FadeScreen", 1);
+                Invoke("TransferTurn", 2);
+            }
+            else
+            {
+                EndGame();
+            }
+        }
+    }
+
 
     void FadeScreen()
     {
