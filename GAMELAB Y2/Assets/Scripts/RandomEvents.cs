@@ -8,7 +8,6 @@ using Unity.Services.Core;
 public class RandomEvents : MonoBehaviour
 {
     private GameManager gameManager;
-    private PromptManager promptManager;
 
     // The four player' maps
     public GameObject map1;
@@ -17,6 +16,7 @@ public class RandomEvents : MonoBehaviour
     public GameObject map4;
 
     public GameObject smokeEffect;
+    public GameObject currentSmokeEffect;
     public GameObject currentTile;
 
     [SerializeField] private int randomTile;
@@ -28,7 +28,7 @@ public class RandomEvents : MonoBehaviour
 
     // Natural events
     //[SerializeField] private GameObject currentTile;
-    [SerializeField] private bool promptFound;
+    [SerializeField] public bool promptFound = false;
 
     async void GetAnalytics()
     {
@@ -47,15 +47,13 @@ public class RandomEvents : MonoBehaviour
     {
         GetAnalytics();
         gameManager = FindObjectOfType<GameManager>();
-        promptManager = FindObjectOfType<PromptManager>();
-
-        promptFound = false;
     }
 
     private void Update()
     {
         if (currentTurn != gameManager.turn)
             ChooseEvent();
+        Debug.Log(currentTile);
     }
 
     private void ChooseEvent()
@@ -140,72 +138,76 @@ public class RandomEvents : MonoBehaviour
         {
             case 1:
                 // P1
+                promptFound = false; // Reset promptFound 
+
                 for (int i = 0; i < map1.transform.childCount && !promptFound; i++)
                 {
                     currentTile = map1.transform.GetChild(i).gameObject;
                     if (currentTile.GetComponent<Tile>().hasPrompt)
                     {
                         promptFound = true;
-                        Instantiate(smokeEffect, currentTile.transform.position, currentTile.transform.rotation);
-                        DisableBuilding();
+                        currentSmokeEffect = Instantiate(smokeEffect, currentTile.transform.position, currentTile.transform.rotation);
+                        StartCoroutine(DisableBuilding(currentSmokeEffect));
                     }
                 }
-                promptFound = false; // Reset promptFound 
                 break;
 
             case 2:
                 // P2
+                promptFound = false; // Reset promptFound 
+
                 for (int i = 0; i < map2.transform.childCount && !promptFound; i++)
                 {
                     currentTile = map2.transform.GetChild(i).gameObject;
                     if (currentTile.GetComponent<Tile>().hasPrompt)
                     {
                         promptFound = true;
-                        Instantiate(smokeEffect, currentTile.transform.position, currentTile.transform.rotation);
-                        DisableBuilding();
+                        currentSmokeEffect = Instantiate(smokeEffect, currentTile.transform.position, currentTile.transform.rotation);
+                        StartCoroutine(DisableBuilding(currentSmokeEffect));
                     }
-                }
-                promptFound = false; // Reset promptFound 
-                
+                }                
                 break;
 
             case 3:
                 // P3
+                promptFound = false; // Reset promptFound 
+
                 for (int i = 0; i < map3.transform.childCount && !promptFound; i++)
                 {
                     currentTile = map3.transform.GetChild(i).gameObject;
                     if (currentTile.GetComponent<Tile>().hasPrompt)
                     {
                         promptFound = true;
-                        Instantiate(smokeEffect, currentTile.transform.position, currentTile.transform.rotation);
-                        DisableBuilding();
+                        currentSmokeEffect = Instantiate(smokeEffect, currentTile.transform.position, currentTile.transform.rotation);
+                        StartCoroutine(DisableBuilding(currentSmokeEffect));
                     }
                 }
-                promptFound = false; // Reset promptFound 
                 break;
 
             case 4:
                 // P4
+                promptFound = false; // Reset promptFound 
+
                 for (int i = 0; i < map4.transform.childCount && !promptFound; i++)
                 {
                     currentTile = map4.transform.GetChild(i).gameObject;
                     if (currentTile.GetComponent<Tile>().hasPrompt)
                     {
                         promptFound = true;
-                        Instantiate(smokeEffect, currentTile.transform.position, currentTile.transform.rotation);
-                        DisableBuilding();
+                        currentSmokeEffect = Instantiate(smokeEffect, currentTile.transform.position, currentTile.transform.rotation);
+                        StartCoroutine(DisableBuilding(currentSmokeEffect));                      
                     }
                 }
-                promptFound = false; // Reset promptFound 
                 break;
         }
     }
 
-    private IEnumerator DisableBuilding()
+    public IEnumerator DisableBuilding(GameObject smokeEffectInstance)
     {
-        yield return new WaitForSeconds(5);
-        // Demolish prompt
-        smokeEffect.SetActive(false);
+        yield return new WaitForSeconds(10);
+        Destroy(currentTile.GetComponent<Tile>().prompt);
+        currentTile = null;
+        smokeEffectInstance.SetActive(false);
     }
 
     private void NoEvent()
