@@ -15,9 +15,8 @@ public class RandomEvents : MonoBehaviour
     public GameObject map3;
     public GameObject map4;
 
-    // The map's tiles
-    public int numberOfTiles = 22;
-    public int randomTile;
+    [SerializeField] private int numberOfTiles = 22;
+    [SerializeField] private int randomTile;
 
     // Choosing events
     [SerializeField] private int currentTurn;
@@ -43,7 +42,7 @@ public class RandomEvents : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
     }
 
-    void Update()
+    private void Update()
     {
         if (currentTurn != gameManager.turn)
             ChooseEvent();
@@ -96,7 +95,6 @@ public class RandomEvents : MonoBehaviour
                     // P1
                     randomTile = Random.Range(0, numberOfTiles);
                     map1.transform.GetChild(randomTile).gameObject.SetActive(false);
-
                     break;
                 }
             case 2:
@@ -104,7 +102,6 @@ public class RandomEvents : MonoBehaviour
                     // P2
                     randomTile = Random.Range(0, numberOfTiles);
                     map2.transform.GetChild(randomTile).gameObject.SetActive(false);
-
                     break;
                 }
             case 3:
@@ -112,7 +109,6 @@ public class RandomEvents : MonoBehaviour
                     // P3
                     randomTile = Random.Range(0, numberOfTiles);
                     map3.transform.GetChild(randomTile).gameObject.SetActive(false);
-
                     break;
                 }
             case 4:
@@ -120,7 +116,6 @@ public class RandomEvents : MonoBehaviour
                     // P4
                     randomTile = Random.Range(0, numberOfTiles);
                     map4.transform.GetChild(randomTile).gameObject.SetActive(false);
-
                     break;
                 }
         }
