@@ -103,27 +103,28 @@ public class RandomEvents : MonoBehaviour
                     // P1
                     randomTile = Random.Range(0, map1.transform.childCount);
                     map1.transform.GetChild(randomTile).gameObject.SetActive(false);
+                    map1.transform.GetChild(randomTile).gameObject.GetComponent<Tile>().hasPrompt = false;
                     break;
                 }
             case 2:
                 {
                     // P2
                     randomTile = Random.Range(0, map2.transform.childCount);
-                    map2.transform.GetChild(randomTile).gameObject.SetActive(false);
+                    map2.transform.GetChild(randomTile).gameObject.GetComponent<Tile>().hasPrompt = false;
                     break;
                 }
             case 3:
                 {
                     // P3
                     randomTile = Random.Range(0, map3.transform.childCount);
-                    map3.transform.GetChild(randomTile).gameObject.SetActive(false);
+                    map3.transform.GetChild(randomTile).gameObject.GetComponent<Tile>().hasPrompt = false;
                     break;
                 }
             case 4:
                 {
                     // P4
                     randomTile = Random.Range(0, map4.transform.childCount);
-                    map4.transform.GetChild(randomTile).gameObject.SetActive(false);
+                    map4.transform.GetChild(randomTile).gameObject.GetComponent<Tile>().hasPrompt = false;
                     break;
                 }
         }
@@ -195,7 +196,7 @@ public class RandomEvents : MonoBehaviour
                     {
                         promptFound = true;
                         currentSmokeEffect = Instantiate(smokeEffect, currentTile.transform.position, currentTile.transform.rotation);
-                        StartCoroutine(DisableBuilding(currentSmokeEffect));                      
+                        StartCoroutine(DisableBuilding(currentSmokeEffect));
                     }
                 }
                 break;
