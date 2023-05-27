@@ -173,6 +173,7 @@ public class PromptManager : MonoBehaviour
                 { "placedPrompts", + 1 },
             };
             AnalyticsService.Instance.CustomData("countPlacedPrompts", parameters);
+
             GameObject prompt = Instantiate(prompts[selectedPrompt], location.position, Quaternion.identity);
             prompt.transform.parent = location;
 

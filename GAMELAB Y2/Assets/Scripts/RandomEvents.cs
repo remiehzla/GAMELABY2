@@ -15,13 +15,19 @@ public class RandomEvents : MonoBehaviour
     public GameObject map3;
     public GameObject map4;
 
-    [SerializeField] private int numberOfTiles = 22;
+    public GameObject smokeEffect;
+    public GameObject currentTile;
+
     [SerializeField] private int randomTile;
 
     // Choosing events
     [SerializeField] private int currentTurn;
     [SerializeField] private int randomEvent;
     [SerializeField] private int totalEvents;
+
+    // Natural events
+    //[SerializeField] private GameObject currentTile;
+    [SerializeField] private bool promptFound;
 
     async void GetAnalytics()
     {
@@ -40,6 +46,8 @@ public class RandomEvents : MonoBehaviour
     {
         GetAnalytics();
         gameManager = FindObjectOfType<GameManager>();
+
+        promptFound = false;
     }
 
     private void Update()
@@ -93,28 +101,28 @@ public class RandomEvents : MonoBehaviour
             case 1:
                 {
                     // P1
-                    randomTile = Random.Range(0, numberOfTiles);
+                    randomTile = Random.Range(0, map1.transform.childCount);
                     map1.transform.GetChild(randomTile).gameObject.SetActive(false);
                     break;
                 }
             case 2:
                 {
                     // P2
-                    randomTile = Random.Range(0, numberOfTiles);
+                    randomTile = Random.Range(0, map2.transform.childCount);
                     map2.transform.GetChild(randomTile).gameObject.SetActive(false);
                     break;
                 }
             case 3:
                 {
                     // P3
-                    randomTile = Random.Range(0, numberOfTiles);
+                    randomTile = Random.Range(0, map3.transform.childCount);
                     map3.transform.GetChild(randomTile).gameObject.SetActive(false);
                     break;
                 }
             case 4:
                 {
                     // P4
-                    randomTile = Random.Range(0, numberOfTiles);
+                    randomTile = Random.Range(0, map4.transform.childCount);
                     map4.transform.GetChild(randomTile).gameObject.SetActive(false);
                     break;
                 }
@@ -130,18 +138,60 @@ public class RandomEvents : MonoBehaviour
         {
             case 1:
                 // P1
+                for (int i = 0; i < map1.transform.childCount && !promptFound; i++)
+                {
+                    currentTile = map1.transform.GetChild(i).gameObject;
+                    if (currentTile.GetComponent<Tile>().hasPrompt)
+                    {
+                        promptFound = true;
+                        Instantiate(smokeEffect, currentTile.transform.position, currentTile.transform.rotation);
+                    }
+                }
+                promptFound = false; // Reset promptFound 
                 break;
 
             case 2:
                 // P2
+                // Loop through all children until the first one that has a building attached is found
+                for (int i = 0; i < map2.transform.childCount && !promptFound; i++)
+                {
+                    currentTile = map2.transform.GetChild(i).gameObject;
+                    if (currentTile.GetComponent<Tile>().hasPrompt)
+                    {
+                        promptFound = true;
+                        Instantiate(smokeEffect, currentTile.transform.position, currentTile.transform.rotation);
+                    }
+                }
+                promptFound = false; // Reset promptFound 
+                
                 break;
 
             case 3:
                 // P3
+                for (int i = 0; i < map3.transform.childCount && !promptFound; i++)
+                {
+                    currentTile = map3.transform.GetChild(i).gameObject;
+                    if (currentTile.GetComponent<Tile>().hasPrompt)
+                    {
+                        promptFound = true;
+                        Instantiate(smokeEffect, currentTile.transform.position, currentTile.transform.rotation);
+                    }
+                }
+                promptFound = false; // Reset promptFound 
                 break;
 
             case 4:
-                // P3
+                // P4
+                for (int i = 0; i < map4.transform.childCount && !promptFound; i++)
+                {
+                    currentTile = map4.transform.GetChild(i).gameObject;
+                    if (currentTile.GetComponent<Tile>().hasPrompt)
+                    {
+                        promptFound = true;
+                        Instantiate(smokeEffect, currentTile.transform.position, currentTile.transform.rotation);
+                    }
+                }
+                promptFound = false; // Reset promptFound 
                 break;
         }
     }

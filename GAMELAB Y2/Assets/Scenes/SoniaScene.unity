@@ -704,6 +704,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6518471042297259676, guid: 4c570856fc9e0814cacd5977a7db5a7e,
         type: 3}
+      propertyPath: hasPrompt
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6518471042297259676, guid: 4c570856fc9e0814cacd5977a7db5a7e,
+        type: 3}
       propertyPath: pointCounter
       value: 
       objectReference: {fileID: 1646792600}
@@ -13464,11 +13469,13 @@ MonoBehaviour:
   map2: {fileID: 671103965}
   map3: {fileID: 671103965}
   map4: {fileID: 172131291}
-  numberOfTiles: 22
+  smokeEffect: {fileID: 0}
+  currentTile: {fileID: 0}
   randomTile: 0
   currentTurn: 0
   randomEvent: 0
-  totalEvents: 8
+  totalEvents: 3
+  promptFound: 0
 --- !u!1 &1694912594
 GameObject:
   m_ObjectHideFlags: 0
