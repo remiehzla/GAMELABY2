@@ -900,6 +900,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Houses
       objectReference: {fileID: 0}
+    - target: {fileID: 3205682832048816807, guid: f863d0a5f123b1348b182a3bf1ccea06,
+        type: 3}
+      propertyPath: m_TagString
+      value: Building
+      objectReference: {fileID: 0}
     - target: {fileID: 6947192100248338304, guid: f863d0a5f123b1348b182a3bf1ccea06,
         type: 3}
       propertyPath: m_RootOrder
@@ -4808,6 +4813,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Houses
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205682832048816807, guid: f863d0a5f123b1348b182a3bf1ccea06,
+        type: 3}
+      propertyPath: m_TagString
+      value: Building
       objectReference: {fileID: 0}
     - target: {fileID: 6947192100248338304, guid: f863d0a5f123b1348b182a3bf1ccea06,
         type: 3}
@@ -9060,6 +9070,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Houses
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205682832048816807, guid: f863d0a5f123b1348b182a3bf1ccea06,
+        type: 3}
+      propertyPath: m_TagString
+      value: Building
       objectReference: {fileID: 0}
     - target: {fileID: 6947192100248338304, guid: f863d0a5f123b1348b182a3bf1ccea06,
         type: 3}
@@ -13469,7 +13484,8 @@ MonoBehaviour:
   map2: {fileID: 671103965}
   map3: {fileID: 671103965}
   map4: {fileID: 172131291}
-  smokeEffect: {fileID: 0}
+  smokeEffect: {fileID: 8572448481517155846, guid: f9e1725a2bf697345a1f8968666764f8,
+    type: 3}
   currentTile: {fileID: 0}
   randomTile: 0
   currentTurn: 0
@@ -13928,6 +13944,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Houses
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205682832048816807, guid: f863d0a5f123b1348b182a3bf1ccea06,
+        type: 3}
+      propertyPath: m_TagString
+      value: Building
       objectReference: {fileID: 0}
     - target: {fileID: 6947192100248338304, guid: f863d0a5f123b1348b182a3bf1ccea06,
         type: 3}

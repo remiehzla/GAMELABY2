@@ -8,6 +8,7 @@ using Unity.Services.Core;
 public class RandomEvents : MonoBehaviour
 {
     private GameManager gameManager;
+    private PromptManager promptManager;
 
     // The four player' maps
     public GameObject map1;
@@ -46,6 +47,7 @@ public class RandomEvents : MonoBehaviour
     {
         GetAnalytics();
         gameManager = FindObjectOfType<GameManager>();
+        promptManager = FindObjectOfType<PromptManager>();
 
         promptFound = false;
     }
@@ -145,6 +147,7 @@ public class RandomEvents : MonoBehaviour
                     {
                         promptFound = true;
                         Instantiate(smokeEffect, currentTile.transform.position, currentTile.transform.rotation);
+                        DisableBuilding();
                     }
                 }
                 promptFound = false; // Reset promptFound 
@@ -152,7 +155,6 @@ public class RandomEvents : MonoBehaviour
 
             case 2:
                 // P2
-                // Loop through all children until the first one that has a building attached is found
                 for (int i = 0; i < map2.transform.childCount && !promptFound; i++)
                 {
                     currentTile = map2.transform.GetChild(i).gameObject;
@@ -160,6 +162,7 @@ public class RandomEvents : MonoBehaviour
                     {
                         promptFound = true;
                         Instantiate(smokeEffect, currentTile.transform.position, currentTile.transform.rotation);
+                        DisableBuilding();
                     }
                 }
                 promptFound = false; // Reset promptFound 
@@ -175,6 +178,7 @@ public class RandomEvents : MonoBehaviour
                     {
                         promptFound = true;
                         Instantiate(smokeEffect, currentTile.transform.position, currentTile.transform.rotation);
+                        DisableBuilding();
                     }
                 }
                 promptFound = false; // Reset promptFound 
@@ -189,11 +193,19 @@ public class RandomEvents : MonoBehaviour
                     {
                         promptFound = true;
                         Instantiate(smokeEffect, currentTile.transform.position, currentTile.transform.rotation);
+                        DisableBuilding();
                     }
                 }
                 promptFound = false; // Reset promptFound 
                 break;
         }
+    }
+
+    private IEnumerator DisableBuilding()
+    {
+        yield return new WaitForSeconds(5);
+        // Demolish prompt
+        smokeEffect.SetActive(false);
     }
 
     private void NoEvent()
