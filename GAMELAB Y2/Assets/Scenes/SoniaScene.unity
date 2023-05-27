@@ -5779,6 +5779,8 @@ MonoBehaviour:
   - {fileID: 3830718827432798897, guid: ad645b2a72ea4bf44a34d005e22baf7b, type: 3}
   selectedPrompt: 0
   demolishMode: 0
+  demolishMoney: 0
+  demolishManpower: 0
   promptChoice1: 0
   promptChoice2: 0
   promptChoice3: 0
