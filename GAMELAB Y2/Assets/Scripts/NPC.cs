@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // Will spawn only during turn 0
+    // Will walk around the map, over tiles only
+    // Will display pop-ups/emotes
+    // Tile layer (6)
+
+    [SerializeField] private float movementSpeed;
+
+    private void FixedUpdate()
     {
+        int layerMask = 1 << 8;
         
+        RaycastHit hit;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
