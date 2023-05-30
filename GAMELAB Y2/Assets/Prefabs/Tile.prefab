@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9018621373584626118}
   - component: {fileID: 6518471042297259676}
   - component: {fileID: 770078892007725973}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ownedByPlayer: 0
-  pointCounter: {fileID: 0}
   hasPrompt: 0
   prompt: {fileID: 0}
+  pointCounter: {fileID: 0}
   defaultMaterial: {fileID: 2100000, guid: 59ef0eb9ea27e544286c551104002cb8, type: 2}
   selectedMaterial: {fileID: 2100000, guid: 18f661d1d0ea9cf41a353b7ef9642abe, type: 2}
 --- !u!65 &770078892007725973
@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 8638815331939473915}
   - component: {fileID: 6927285439613308019}
   - component: {fileID: 6927285439613308016}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,8 +177,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ownedByPlayer: 0
-  pointCounter: {fileID: 0}
   hasPrompt: 0
   prompt: {fileID: 0}
+  pointCounter: {fileID: 0}
   defaultMaterial: {fileID: 2100000, guid: 59ef0eb9ea27e544286c551104002cb8, type: 2}
   selectedMaterial: {fileID: 2100000, guid: 18f661d1d0ea9cf41a353b7ef9642abe, type: 2}
