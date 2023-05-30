@@ -13492,6 +13492,7 @@ MonoBehaviour:
   currentTurn: 0
   randomEvent: 0
   totalEvents: 6
+  timeForEffect: 7
   promptFound: 0
   counterClockedTurns: 0
 --- !u!1 &1694912594

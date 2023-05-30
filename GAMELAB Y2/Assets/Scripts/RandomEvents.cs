@@ -25,6 +25,7 @@ public class RandomEvents : MonoBehaviour
     [SerializeField] private int currentTurn;
     [SerializeField] private int randomEvent;
     [SerializeField] private int totalEvents;
+    [SerializeField] private int timeForEffect;
 
     // Natural events
     [SerializeField] public bool promptFound = false;
@@ -231,7 +232,7 @@ public class RandomEvents : MonoBehaviour
 
     public IEnumerator DisableBuilding(GameObject smokeEffectInstance)
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(timeForEffect);
         Destroy(currentTile.GetComponent<Tile>().prompt);
         currentTile = null;
         smokeEffectInstance.SetActive(false);
