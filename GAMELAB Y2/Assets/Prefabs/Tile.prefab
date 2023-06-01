@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b1fe4626d79564990a421180cc42b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ownedByPlayer: 0
+  ownedByPlayer: 3
   hasPrompt: 0
   prompt: {fileID: 0}
   pointCounter: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &7469237688137982612
 Transform:
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b1fe4626d79564990a421180cc42b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ownedByPlayer: 0
+  ownedByPlayer: 1
   hasPrompt: 0
   prompt: {fileID: 0}
   pointCounter: {fileID: 0}
