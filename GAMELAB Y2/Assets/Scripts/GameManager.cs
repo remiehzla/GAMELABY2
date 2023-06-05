@@ -86,6 +86,15 @@ public class GameManager : MonoBehaviour
         {
             endButtonText.text = "Back to menu";
         }
+
+        if (turn == 0)
+        {
+            //fadeScreen.gameObject.SetActive(false);
+        }
+        else
+        {
+            //fadeScreen.gameObject.SetActive(true);
+        }
     }
 
     public void IncreaseTurn()
