@@ -9,7 +9,7 @@ using Unity.Services.Core;
 
 public class GameManager : MonoBehaviour
 {
-    public int playerCount;
+    public static int playerCount;
 
     public int money;
     public int manpower;
@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text manpowerCounter;
     [SerializeField] private Text roundCounter;
     [SerializeField] private Text turnCounter;
+
+    [SerializeField] private Text playerCounter;
 
     [SerializeField] private GameObject skipButton;
     [SerializeField] private Text endButtonText;
@@ -68,6 +70,11 @@ public class GameManager : MonoBehaviour
     {
         // Update the UI
 
+        if (playerCounter != null)
+        {
+            playerCounter.text = "Amount of players: " + playerCount;
+        }
+
         moneyCounter.text = "Money: " + money.ToString();
         manpowerCounter.text = "Manpower: " + manpower.ToString();
         roundCounter.text = "Round: " + round.ToString();
@@ -94,6 +101,21 @@ public class GameManager : MonoBehaviour
         else
         {
             //fadeScreen.gameObject.SetActive(true);
+        }
+    }
+
+    public void IncreasePlayerCount()
+    {
+        if (playerCount < 4)
+        {
+            playerCount += 1;
+        }
+    }
+    public void DecreasePlayerCount()
+    {
+        if (playerCount > 2)
+        {
+            playerCount -= 1;
         }
     }
 
@@ -202,6 +224,6 @@ public class GameManager : MonoBehaviour
                 { "gamesFinished", + 1 },
             };
         AnalyticsService.Instance.CustomData("gameFinished", parameters);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }

@@ -36,7 +36,29 @@ public class PointCounter : MonoBehaviour
         socialPointText.text = "Social: " + socialPoints.ToString();
         naturePointText.text = "Nature: " + naturePoints.ToString();
         economyPointText.text = "Economy: " + economyPoints.ToString();
-        totalPointText.text = "Player " + player.ToString() + ": " + totalPoints.ToString();
+        switch (player)
+        {
+            case 1:
+                {
+                    totalPointText.text = PlayerSettings.playerName1 + ": " + totalPoints.ToString();
+                    break;
+                }
+            case 2:
+                {
+                    totalPointText.text = PlayerSettings.playerName2 + ": " + totalPoints.ToString();
+                    break;
+                }
+            case 3:
+                {
+                    totalPointText.text = PlayerSettings.playerName3 + ": " + totalPoints.ToString();
+                    break;
+                }
+            case 4:
+                {
+                    totalPointText.text = PlayerSettings.playerName4 + ": " + totalPoints.ToString();
+                    break;
+                }
+        }
 
         // Compare points once rounds are over and change UI color for the winner
 
@@ -48,6 +70,17 @@ public class PointCounter : MonoBehaviour
         else
         {
             panel.color = new Color32(255, 255, 255, 255);
+        }
+
+        // Disable counter if player isn't playing
+
+        if (player > GameManager.playerCount)
+        {
+            panel.enabled = false;
+            socialPointText.enabled = false;
+            naturePointText.enabled = false;
+            economyPointText.enabled = false;
+            totalPointText.enabled = false;
         }
     }
 }

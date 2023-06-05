@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/PlayersLobbyScene.unity
+    guid: 0fe971d0fe9187546bdef463a5fe1f85
   - enabled: 1
     path: Assets/Scenes/SoniaScene.unity
     guid: fbe8c197df1a32b4e910b834e9dbf565
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}
