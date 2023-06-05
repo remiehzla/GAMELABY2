@@ -8,15 +8,16 @@ public class CameraMovement : MonoBehaviour
     float verticalInput;
 
     [SerializeField] private float moveSpeed;
+    [SerializeField] private float zoomSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         GetInput();
         MoveCamera();
@@ -34,11 +35,18 @@ public class CameraMovement : MonoBehaviour
         {
             gameObject.transform.Rotate(0, -90, 0, Space.World);
         }
+        if (Input.GetKey(KeyCode.PageDown))
+        {
+            Camera.main.orthographicSize = Camera.main.orthographicSize * zoomSpeed;
+        }
+        if (Input.GetKey(KeyCode.PageUp))
+        {
+            Camera.main.orthographicSize = Camera.main.orthographicSize / zoomSpeed;
+        }
     }
 
     void MoveCamera()
     {
         gameObject.transform.Translate(horizontalInput / 100f * moveSpeed, verticalInput / 100f * moveSpeed, 0f, Space.Self);
     }
-
 }
