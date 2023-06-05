@@ -4,13 +4,13 @@ using UnityEngine.AI;
 public class NPCController : MonoBehaviour
 {
     public float movementSpeed;
-    public float returnTime = 5f; // Time in seconds before NPC returns to the target destination
+    public float returnTime; // Time in seconds before NPC returns to the target destination
     public Transform targetDestination; // The target destination to return to
 
     private NavMeshAgent navMeshAgent;
     private Vector3 initialPosition;
-    private float timer;
-    private bool returning;
+    [SerializeField] private float timer;
+    [SerializeField] private bool returning;
 
     private void Start()
     {
@@ -28,11 +28,13 @@ public class NPCController : MonoBehaviour
         navMeshAgent.SetDestination(randomPoint);
     }
 
+    // Move towards a random direction on the map
     private Vector3 GetRandomPointOnNavMesh()
     {
         NavMeshTriangulation navMeshData = NavMesh.CalculateTriangulation();
         int randomIndex = Random.Range(0, navMeshData.indices.Length / 3);
-        Vector3 randomPoint = Vector3.Lerp(navMeshData.vertices[navMeshData.indices[randomIndex * 3 + 0]], navMeshData.vertices[navMeshData.indices[randomIndex * 3 + 1]], Random.value);
+        Vector3 randomPoint = Vector3.Lerp(navMeshData.vertices[navMeshData.indices[randomIndex * 3 + 0]], 
+            navMeshData.vertices[navMeshData.indices[randomIndex * 3 + 1]], Random.value);
         randomPoint = Vector3.Lerp(randomPoint, navMeshData.vertices[navMeshData.indices[randomIndex * 3 + 2]], Random.value);
         return randomPoint;
     }
@@ -46,7 +48,9 @@ public class NPCController : MonoBehaviour
             if (timer <= 0f)
             {
                 returning = false;
-                navMeshAgent.SetDestination(targetDestination.position);
+/*              navMeshAgent.SetDestination(targetDestination.position);
+*/             //navMeshAgent.SetDestination(initialPosition);
+
             }
         }
         else
@@ -55,7 +59,9 @@ public class NPCController : MonoBehaviour
             {
                 timer = returnTime;
                 returning = true;
-                navMeshAgent.SetDestination(initialPosition);
+/*              navMeshAgent.SetDestination(initialPosition);
+*/              navMeshAgent.SetDestination(targetDestination.position);
+
             }
         }
     }
