@@ -6083,6 +6083,9 @@ MonoBehaviour:
   - {fileID: 5615908643112130605, guid: 54af54593491a06429ec9282d94c8ef1, type: 3}
   - {fileID: 2040877865454089344, guid: cace20684e484fb458bcbe802b431cbc, type: 3}
   - {fileID: 3830718827432798897, guid: ad645b2a72ea4bf44a34d005e22baf7b, type: 3}
+  - {fileID: 7588383643491445725, guid: 22047f56896d4ba4888ec810dc09acc9, type: 3}
+  - {fileID: 8154602390636060232, guid: 2ce2d2dd90527c44ebd5401128bca229, type: 3}
+  - {fileID: 6245607314414527719, guid: 1c601fe8af244fc4e95cc6f17026436d, type: 3}
   selectedPrompt: 0
   demolishMode: 0
   demolishMoney: 0
