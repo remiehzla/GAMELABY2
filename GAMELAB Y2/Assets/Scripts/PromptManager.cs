@@ -50,69 +50,37 @@ public class PromptManager : MonoBehaviour
         randomEvents = FindObjectOfType<RandomEvents>();
     }
 
-    void Update()
-    {
-        // Update the UI
-
-        //promptChoiceText[0].text = promptChoice[0].ToString();
-        //promptChoiceText[1].text = promptChoice[1].ToString();
-        //promptChoiceText[2].text = promptChoice[2].ToString();
-    }
-
     public void RandomizePrompts()
     {
         promptUI.SetActive(true);
 
-        // Choose tile card screen
+        // Select random prompt from list and update UI for all 3 options
 
-        for (int i = Random.Range(1, prompts.Count); i <= prompts.Count; i++)
+        for (int x = 0; x <= promptChoice.Count; x++)
         {
-            string promptNameT1 = prompts[i].GetComponent<Prompt>().promptName;
-            string neededMoneyT1 = prompts[i].GetComponent<Prompt>().neededMoney.ToString();
-            string neededManpowerT1 = prompts[i].GetComponent<Prompt>().neededManpower.ToString();
-            string neededRoundsT1 = prompts[i].GetComponent<Prompt>().neededRounds.ToString();
-            promptChoice[0] = i;
-            promptChoiceTextName[0].text = promptNameT1;
-            promptChoiceTextMoney[0].text = "Money needed: " + neededMoneyT1;
-            promptChoiceTextManpower[0].text = "Manpower needed: " + neededManpowerT1;
-            promptChoiceTextRounds[0].text = "Rounds needed: " + neededRoundsT1;
-            break;
+            for (int i = Random.Range(1, prompts.Count); i <= prompts.Count; i++)
+            {
+                string promptName = prompts[i].GetComponent<Prompt>().promptName;
+                string neededMoney = prompts[i].GetComponent<Prompt>().neededMoney.ToString();
+                string neededManpower = prompts[i].GetComponent<Prompt>().neededManpower.ToString();
+                string neededRounds = prompts[i].GetComponent<Prompt>().neededRounds.ToString();
+                promptChoice[x] = i;
+                promptChoiceTextName[x].text = promptName;
+                promptChoiceTextMoney[x].text = "Money needed: " + neededMoney;
+                promptChoiceTextManpower[x].text = "Manpower needed: " + neededManpower;
+                promptChoiceTextRounds[x].text = "Rounds needed: " + neededRounds;
+                break;
+            }
         }
-        for (int i = Random.Range(1, prompts.Count); i <= prompts.Count; i++)
-        {
-            string promptNameT2 = prompts[i].GetComponent<Prompt>().promptName;
-            string neededMoneyT2 = prompts[i].GetComponent<Prompt>().neededMoney.ToString();
-            string neededManpowerT2 = prompts[i].GetComponent<Prompt>().neededManpower.ToString();
-            string neededRoundsT2 = prompts[i].GetComponent<Prompt>().neededRounds.ToString();
-            promptChoice[1] = i;
-            promptChoiceTextName[1].text = promptNameT2;
-            promptChoiceTextMoney[1].text = "Money needed: " + neededMoneyT2;
-            promptChoiceTextManpower[1].text = "Manpower needed: " + neededManpowerT2;
-            promptChoiceTextRounds[1].text = "Rounds needed: " + neededRoundsT2;
-            break;
-        }
-        for (int i = Random.Range(1, prompts.Count); i <= prompts.Count; i++)
-        {
-            string promptNameT3 = prompts[i].GetComponent<Prompt>().promptName;
-            string neededMoneyT3 = prompts[i].GetComponent<Prompt>().neededMoney.ToString();
-            string neededManpowerT3 = prompts[i].GetComponent<Prompt>().neededManpower.ToString();
-            string neededRoundsT3 = prompts[i].GetComponent<Prompt>().neededRounds.ToString();
-            promptChoice[2] = i;
-            promptChoiceTextName[2].text = promptNameT3;
-            promptChoiceTextMoney[2].text = "Money needed: " + neededMoneyT3;
-            promptChoiceTextManpower[2].text = "Manpower needed: " + neededManpowerT3;
-            promptChoiceTextRounds[2].text = "Rounds needed: " + neededRoundsT3;
-            break;
-        }
+
+        // If any options are the same, reroll
 
         if (promptChoice[0] == promptChoice[1] || promptChoice[1] == promptChoice[2] || promptChoice[2] == promptChoice[0] 
-            || promptChoice[0] == promptChoice[1] && promptChoice[0] == promptChoice[2])
+        || promptChoice[0] == promptChoice[1] && promptChoice[0] == promptChoice[2])
         {
             RandomizePrompts();
         }
     }
-
-    // Chosen prompt placement
 
     public void ChoosePrompt1()
     {

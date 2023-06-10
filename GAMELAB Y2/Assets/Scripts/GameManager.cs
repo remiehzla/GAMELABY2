@@ -83,10 +83,14 @@ public class GameManager : MonoBehaviour
         if (turn == 0)
         {
             skipButton.SetActive(false);
+            pointDisplay.SetActive(true);
+            pointDisplay.GetComponent<Animator>().SetBool("Enabled", true);
         }
         else
         {
             skipButton.SetActive(true);
+            pointDisplay.SetActive(false);
+            pointDisplay.GetComponent<Animator>().SetBool("Enabled", false);
         }
 
         if (round > maxRounds)
@@ -183,27 +187,22 @@ public class GameManager : MonoBehaviour
         {
             case 0:
                 cameraTransform.position = cameraFocusDay.position;
-                pointDisplay.SetActive(true);
                 break;
             case 1:
                 cameraTransform.position = cameraFocusP1.position;
                 promptManager.RandomizePrompts();
-                pointDisplay.SetActive(false);
                 break;
             case 2:
                 cameraTransform.position = cameraFocusP2.position;
                 promptManager.RandomizePrompts();
-                pointDisplay.SetActive(false);
                 break;
             case 3:
                 cameraTransform.position = cameraFocusP3.position;
                 promptManager.RandomizePrompts();
-                pointDisplay.SetActive(false);
                 break;
             case 4:
                 cameraTransform.position = cameraFocusP4.position;
                 promptManager.RandomizePrompts();
-                pointDisplay.SetActive(false);
                 break;
         }
     }
