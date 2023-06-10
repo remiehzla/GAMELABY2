@@ -6260,22 +6260,24 @@ MonoBehaviour:
   demolishMode: 0
   demolishMoney: 0
   demolishManpower: 0
-  promptChoice1: 0
-  promptChoice2: 0
-  promptChoice3: 0
+  promptChoice: 000000000000000000000000
   promptUI: {fileID: 660433806}
-  promptChoice1TextName: {fileID: 7294112}
-  promptChoice1TextMoney: {fileID: 731996495}
-  promptChoice1TextManpower: {fileID: 751015877}
-  promptChoice1TextRounds: {fileID: 1729598129}
-  promptChoice2TextName: {fileID: 1640791592}
-  promptChoice2TextMoney: {fileID: 1421033973}
-  promptChoice2TextManpower: {fileID: 794105346}
-  promptChoice2TextRounds: {fileID: 825185818}
-  promptChoice3TextName: {fileID: 494314311}
-  promptChoice3TextMoney: {fileID: 149388822}
-  promptChoice3TextManpower: {fileID: 1156054872}
-  promptChoice3TextRounds: {fileID: 951376417}
+  promptChoiceTextName:
+  - {fileID: 7294112}
+  - {fileID: 1640791592}
+  - {fileID: 494314311}
+  promptChoiceTextMoney:
+  - {fileID: 731996495}
+  - {fileID: 1421033973}
+  - {fileID: 149388822}
+  promptChoiceTextManpower:
+  - {fileID: 751015877}
+  - {fileID: 794105346}
+  - {fileID: 1156054872}
+  promptChoiceTextRounds:
+  - {fileID: 1729598129}
+  - {fileID: 825185818}
+  - {fileID: 951376417}
 --- !u!4 &700104989
 Transform:
   m_ObjectHideFlags: 0
