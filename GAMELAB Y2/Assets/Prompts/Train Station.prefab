@@ -25,14 +25,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707205170888159754}
-  m_LocalRotation: {x: -0.7071068, y: 0.00000005338508, z: 0.00000005338508, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 9.9, z: 0}
-  m_LocalScale: {x: 2500, y: 2000, z: 500}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: -0.5}
+  m_LocalPosition: {x: -10, y: 15, z: 0}
+  m_LocalScale: {x: 5000, y: 4000, z: 1000}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6215859268005008455}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 270, z: 0}
 --- !u!33 &6720140483138866794
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -140,6 +140,7 @@ MonoBehaviour:
   neededRounds: 3
   built: 0
   constructionIcon: {fileID: 7309162270213180162}
+  constructionCrane: {fileID: 0}
   addedSocialPoints: 70
   addedNaturePoints: -15
   addedEconomyPoints: 20
