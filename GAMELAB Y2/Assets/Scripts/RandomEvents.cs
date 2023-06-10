@@ -101,6 +101,19 @@ public class RandomEvents : MonoBehaviour
                     case 5:
                         Invoke("DecreaseEconomy", 1);
                         break;
+
+                    case 6:
+                        NoEvent();
+                        break;
+                    case 7:
+                        NoEvent();
+                        break;
+                    case 8:
+                        NoEvent();
+                        break;
+                    case 9:
+                        NoEvent();
+                        break;
                 }
             }
         }
