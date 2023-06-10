@@ -1879,10 +1879,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allowSelectingInScene: 1
   icons:
-  - {fileID: 21300000, guid: ca3bdc023599ddc47a0b8d641817f4d9, type: 3}
-  - {fileID: 21300000, guid: 2969f030ac645a244a998755787c29ed, type: 3}
-  - {fileID: 21300000, guid: d8e5e2edfb160f549ae61935dc994a1b, type: 3}
-  - {fileID: 21300000, guid: fe2af64ec37fb3749a8fafb0d816eaa0, type: 3}
+  - {fileID: 21300000, guid: 6e13f35aed84dc44fa229869e8e615a8, type: 3}
+  - {fileID: 21300000, guid: d16264623d813e042b171c4d95f7627e, type: 3}
+  - {fileID: 21300000, guid: 1a9620934a8b7f64dad7a4a5feb3462d, type: 3}
+  - {fileID: 21300000, guid: cd7421699bb733b4f8d13603c47cdd44, type: 3}
+  - {fileID: 21300000, guid: cee8686d51b6cde409640c25fc5a59df, type: 3}
+  - {fileID: 21300000, guid: e3501938a3d06294e8a2068a48ce4392, type: 3}
   playerNameInput: {fileID: 1149342106}
   playerNameInputPlaceholder: {fileID: 1344726675}
   iconImage: {fileID: 1567000108}
