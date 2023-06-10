@@ -53,6 +53,7 @@ MonoBehaviour:
   neededRounds: 1
   built: 0
   constructionIcon: {fileID: 5203944616808713741}
+  constructionCrane: {fileID: 0}
   addedSocialPoints: 15
   addedNaturePoints: 35
   addedEconomyPoints: 0
@@ -272,10 +273,20 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d2b9951d9bbda8d4291011741f89bb45, type: 2}
+    - target: {fileID: 533193074659131909, guid: 425fa439def1cd74aa65c34eb81c4cb8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.507387
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 425fa439def1cd74aa65c34eb81c4cb8,
         type: 3}
       propertyPath: m_Name
       value: Science_musuem
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358922353791854364, guid: 425fa439def1cd74aa65c34eb81c4cb8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 5509654439515443377, guid: 425fa439def1cd74aa65c34eb81c4cb8,
         type: 3}
