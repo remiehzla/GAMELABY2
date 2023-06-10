@@ -16,6 +16,7 @@ public class Prompt : MonoBehaviour
     private int placedInRound;
 
     [SerializeField] private GameObject constructionIcon;
+    [SerializeField] private GameObject constructionCrane;
 
     public int addedSocialPoints;
     public int addedNaturePoints;
@@ -57,10 +58,12 @@ public class Prompt : MonoBehaviour
         if (built)
         {
             constructionIcon.SetActive(false);
+            //constructionCrane.SetActive(false);
         }
         else
         {
             constructionIcon.SetActive(true);
+            //constructionCrane.SetActive(true);
         }
     }
 

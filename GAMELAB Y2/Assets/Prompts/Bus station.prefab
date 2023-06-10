@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 4634467547933387395}
   m_Father: {fileID: 4413327859537208175}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5628950873857413794
 MonoBehaviour:
@@ -158,8 +158,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 2715160776056203697}
   - {fileID: 8513862619903234147}
+  - {fileID: 2715160776056203697}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -175,13 +175,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aaf5a21a67bd0a47a7df7a34e0bf009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptName: Bus station
+  promptName: Bus Station
   ownedByPlayer: 0
   neededMoney: 500
   neededManpower: 700
   neededRounds: 2
   built: 0
   constructionIcon: {fileID: 1171183369470763638}
+  constructionCrane: {fileID: 0}
   addedSocialPoints: 0
   addedNaturePoints: 0
   addedEconomyPoints: 0
@@ -200,7 +201,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b91c9ec956eced1419a1418526f415b7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b91c9ec956eced1419a1418526f415b7,
         type: 3}
@@ -230,7 +231,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b91c9ec956eced1419a1418526f415b7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -27
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b91c9ec956eced1419a1418526f415b7,
         type: 3}

@@ -46,13 +46,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aaf5a21a67bd0a47a7df7a34e0bf009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptName: Library
+  promptName: Police Station
   ownedByPlayer: 0
   neededMoney: 40
   neededManpower: 20
   neededRounds: 1
   built: 0
   constructionIcon: {fileID: 6071807501203396239}
+  constructionCrane: {fileID: 0}
   addedSocialPoints: 100
   addedNaturePoints: -5
   addedEconomyPoints: 0
