@@ -16,24 +16,14 @@ public class PromptManager : MonoBehaviour
     [SerializeField] private int demolishMoney;
     [SerializeField] private int demolishManpower;
 
-    public int promptChoice1;
-    public int promptChoice2;
-    public int promptChoice3;
+    public List<int> promptChoice = new List<int>();
 
     [SerializeField] private GameObject promptUI;
 
-    [SerializeField] private Text promptChoice1TextName;
-    [SerializeField] private Text promptChoice1TextMoney;
-    [SerializeField] private Text promptChoice1TextManpower;
-    [SerializeField] private Text promptChoice1TextRounds;
-    [SerializeField] private Text promptChoice2TextName;
-    [SerializeField] private Text promptChoice2TextMoney;
-    [SerializeField] private Text promptChoice2TextManpower;
-    [SerializeField] private Text promptChoice2TextRounds;
-    [SerializeField] private Text promptChoice3TextName;
-    [SerializeField] private Text promptChoice3TextMoney;
-    [SerializeField] private Text promptChoice3TextManpower;
-    [SerializeField] private Text promptChoice3TextRounds;
+    [SerializeField] private List<Text> promptChoiceTextName = new List<Text>();
+    [SerializeField] private List<Text> promptChoiceTextMoney = new List<Text>();
+    [SerializeField] private List<Text> promptChoiceTextManpower = new List<Text>();
+    [SerializeField] private List<Text> promptChoiceTextRounds = new List<Text>();
 
     private GameManager gameManager;
     private RandomEvents randomEvents;
@@ -64,9 +54,9 @@ public class PromptManager : MonoBehaviour
     {
         // Update the UI
 
-        //promptChoice1Text.text = promptChoice1.ToString();
-        //promptChoice2Text.text = promptChoice2.ToString();
-        //promptChoice3Text.text = promptChoice3.ToString();
+        //promptChoiceText[0].text = promptChoice[0].ToString();
+        //promptChoiceText[1].text = promptChoice[1].ToString();
+        //promptChoiceText[2].text = promptChoice[2].ToString();
     }
 
     public void RandomizePrompts()
@@ -75,17 +65,17 @@ public class PromptManager : MonoBehaviour
 
         // Choose tile card screen
 
-        for(int i = Random.Range(1, prompts.Count); i <= prompts.Count; i++)
+        for (int i = Random.Range(1, prompts.Count); i <= prompts.Count; i++)
         {
             string promptNameT1 = prompts[i].GetComponent<Prompt>().promptName;
             string neededMoneyT1 = prompts[i].GetComponent<Prompt>().neededMoney.ToString();
             string neededManpowerT1 = prompts[i].GetComponent<Prompt>().neededManpower.ToString();
             string neededRoundsT1 = prompts[i].GetComponent<Prompt>().neededRounds.ToString();
-            promptChoice1 = i;
-            promptChoice1TextName.text = promptNameT1;
-            promptChoice1TextMoney.text = "Money needed: " + neededMoneyT1;
-            promptChoice1TextManpower.text = "Manpower needed: " + neededManpowerT1;
-            promptChoice1TextRounds.text = "Rounds needed: " + neededRoundsT1;
+            promptChoice[0] = i;
+            promptChoiceTextName[0].text = promptNameT1;
+            promptChoiceTextMoney[0].text = "Money needed: " + neededMoneyT1;
+            promptChoiceTextManpower[0].text = "Manpower needed: " + neededManpowerT1;
+            promptChoiceTextRounds[0].text = "Rounds needed: " + neededRoundsT1;
             break;
         }
         for (int i = Random.Range(1, prompts.Count); i <= prompts.Count; i++)
@@ -94,11 +84,11 @@ public class PromptManager : MonoBehaviour
             string neededMoneyT2 = prompts[i].GetComponent<Prompt>().neededMoney.ToString();
             string neededManpowerT2 = prompts[i].GetComponent<Prompt>().neededManpower.ToString();
             string neededRoundsT2 = prompts[i].GetComponent<Prompt>().neededRounds.ToString();
-            promptChoice2 = i;
-            promptChoice2TextName.text = promptNameT2;
-            promptChoice2TextMoney.text = "Money needed: " + neededMoneyT2;
-            promptChoice2TextManpower.text = "Manpower needed: " + neededManpowerT2;
-            promptChoice2TextRounds.text = "Rounds needed: " + neededRoundsT2;
+            promptChoice[1] = i;
+            promptChoiceTextName[1].text = promptNameT2;
+            promptChoiceTextMoney[1].text = "Money needed: " + neededMoneyT2;
+            promptChoiceTextManpower[1].text = "Manpower needed: " + neededManpowerT2;
+            promptChoiceTextRounds[1].text = "Rounds needed: " + neededRoundsT2;
             break;
         }
         for (int i = Random.Range(1, prompts.Count); i <= prompts.Count; i++)
@@ -107,16 +97,16 @@ public class PromptManager : MonoBehaviour
             string neededMoneyT3 = prompts[i].GetComponent<Prompt>().neededMoney.ToString();
             string neededManpowerT3 = prompts[i].GetComponent<Prompt>().neededManpower.ToString();
             string neededRoundsT3 = prompts[i].GetComponent<Prompt>().neededRounds.ToString();
-            promptChoice3 = i;
-            promptChoice3TextName.text = promptNameT3;
-            promptChoice3TextMoney.text = "Money needed: " + neededMoneyT3;
-            promptChoice3TextManpower.text = "Manpower needed: " + neededManpowerT3;
-            promptChoice3TextRounds.text = "Rounds needed: " + neededRoundsT3;
+            promptChoice[2] = i;
+            promptChoiceTextName[2].text = promptNameT3;
+            promptChoiceTextMoney[2].text = "Money needed: " + neededMoneyT3;
+            promptChoiceTextManpower[2].text = "Manpower needed: " + neededManpowerT3;
+            promptChoiceTextRounds[2].text = "Rounds needed: " + neededRoundsT3;
             break;
         }
 
-        if (promptChoice1 == promptChoice2 || promptChoice2 == promptChoice3 || promptChoice3 == promptChoice1 
-            || promptChoice1 == promptChoice2 && promptChoice1 == promptChoice3)
+        if (promptChoice[0] == promptChoice[1] || promptChoice[1] == promptChoice[2] || promptChoice[2] == promptChoice[0] 
+            || promptChoice[0] == promptChoice[1] && promptChoice[0] == promptChoice[2])
         {
             RandomizePrompts();
         }
@@ -126,17 +116,17 @@ public class PromptManager : MonoBehaviour
 
     public void ChoosePrompt1()
     {
-        selectedPrompt = promptChoice1;
+        selectedPrompt = promptChoice[0];
         promptUI.SetActive(false);
     }
     public void ChoosePrompt2()
     {
-        selectedPrompt = promptChoice2;
+        selectedPrompt = promptChoice[1];
         promptUI.SetActive(false);
     }
     public void ChoosePrompt3()
     {
-        selectedPrompt = promptChoice3;
+        selectedPrompt = promptChoice[2];
         promptUI.SetActive(false);
     }
     public void ChooseDemolish()
