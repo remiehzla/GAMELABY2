@@ -6262,24 +6262,12 @@ MonoBehaviour:
   demolishMode: 0
   demolishMoney: 0
   demolishManpower: 0
-  promptChoice: 000000000000000000000000
+  promptChoice: 
   promptUI: {fileID: 660433806}
-  promptChoiceTextName:
-  - {fileID: 7294112}
-  - {fileID: 1640791592}
-  - {fileID: 494314311}
-  promptChoiceTextMoney:
-  - {fileID: 731996495}
-  - {fileID: 1421033973}
-  - {fileID: 149388822}
-  promptChoiceTextManpower:
-  - {fileID: 751015877}
-  - {fileID: 794105346}
-  - {fileID: 1156054872}
-  promptChoiceTextRounds:
-  - {fileID: 1729598129}
-  - {fileID: 825185818}
-  - {fileID: 951376417}
+  promptChoiceTextName: []
+  promptChoiceTextMoney: []
+  promptChoiceTextManpower: []
+  promptChoiceTextRounds: []
 --- !u!4 &700104989
 Transform:
   m_ObjectHideFlags: 0
@@ -7425,9 +7413,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 500
-  zoomSpeed: 1.01
-  minZoom: 125
-  maxZoom: 500
+  zoomSpeed: 0
+  minZoom: 0
+  maxZoom: 0
 --- !u!95 &836531454
 Animator:
   serializedVersion: 5
@@ -14194,7 +14182,7 @@ MonoBehaviour:
   currentTurn: 0
   randomEvent: 0
   totalEvents: 6
-  timeForEffect: 7
+  timeForEffect: 0
   promptFound: 0
   counterClockedTurns: 0
 --- !u!1 &1694912594
