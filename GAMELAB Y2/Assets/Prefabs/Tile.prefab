@@ -50,8 +50,8 @@ MonoBehaviour:
   hasPrompt: 0
   prompt: {fileID: 0}
   pointCounter: {fileID: 0}
-  defaultMaterial: {fileID: 2100000, guid: 59ef0eb9ea27e544286c551104002cb8, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 18f661d1d0ea9cf41a353b7ef9642abe, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 15155ff804af0ae448724e5fa86d459c, type: 2}
+  selectedMaterial: {fileID: 2100000, guid: 81f631b9712524947b401ac94cf2580e, type: 2}
 --- !u!65 &770078892007725973
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -180,5 +180,5 @@ MonoBehaviour:
   hasPrompt: 0
   prompt: {fileID: 0}
   pointCounter: {fileID: 0}
-  defaultMaterial: {fileID: 2100000, guid: 59ef0eb9ea27e544286c551104002cb8, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 18f661d1d0ea9cf41a353b7ef9642abe, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 15155ff804af0ae448724e5fa86d459c, type: 2}
+  selectedMaterial: {fileID: 2100000, guid: 81f631b9712524947b401ac94cf2580e, type: 2}
