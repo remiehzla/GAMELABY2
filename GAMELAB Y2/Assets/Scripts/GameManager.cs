@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
         GetAnalytics();
         promptManager = FindObjectOfType<PromptManager>();
         randomEvents = FindObjectOfType<RandomEvents>();
+
     }
 
     void Update()

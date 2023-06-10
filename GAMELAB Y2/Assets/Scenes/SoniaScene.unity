@@ -364,8 +364,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe55b15204a3f7642ac6a1f32c506c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnTime: 15
+  returnTime: 2
   timer: 0
+  returning: 0
 --- !u!195 &28180699
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -771,8 +772,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe55b15204a3f7642ac6a1f32c506c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnTime: 15
+  returnTime: 2
   timer: 0
+  returning: 0
 --- !u!195 &77359260
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2502,8 +2504,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe55b15204a3f7642ac6a1f32c506c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnTime: 15
+  returnTime: 2
   timer: 0
+  returning: 0
 --- !u!195 &320175878
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4009,8 +4012,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe55b15204a3f7642ac6a1f32c506c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnTime: 15
+  returnTime: 2
   timer: 0
+  returning: 0
 --- !u!195 &465376167
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4313,6 +4317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   returnTime: 15
   timer: 0
+  returning: 0
 --- !u!195 &484149037
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5139,8 +5144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe55b15204a3f7642ac6a1f32c506c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnTime: 15
+  returnTime: 2
   timer: 0
+  returning: 0
 --- !u!195 &574595311
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5785,8 +5791,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe55b15204a3f7642ac6a1f32c506c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnTime: 15
+  returnTime: 2
   timer: 0
+  returning: 0
 --- !u!195 &629822378
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5920,8 +5927,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe55b15204a3f7642ac6a1f32c506c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnTime: 15
+  returnTime: 2
   timer: 0
+  returning: 0
 --- !u!195 &634056087
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8176,8 +8184,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe55b15204a3f7642ac6a1f32c506c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnTime: 15
+  returnTime: 2
   timer: 0
+  returning: 0
 --- !u!195 &809366696
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8620,8 +8629,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe55b15204a3f7642ac6a1f32c506c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnTime: 15
+  returnTime: 2
   timer: 0
+  returning: 0
 --- !u!195 &838823095
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -9622,8 +9632,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe55b15204a3f7642ac6a1f32c506c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnTime: 15
+  returnTime: 2
   timer: 0
+  returning: 0
 --- !u!195 &972797375
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -10100,8 +10111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe55b15204a3f7642ac6a1f32c506c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnTime: 15
+  returnTime: 2
   timer: 0
+  returning: 0
 --- !u!195 &1041293323
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -12481,8 +12493,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe55b15204a3f7642ac6a1f32c506c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnTime: 15
+  returnTime: 2
   timer: 0
+  returning: 0
 --- !u!195 &1280457454
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -13244,8 +13257,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe55b15204a3f7642ac6a1f32c506c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnTime: 15
+  returnTime: 2
   timer: 0
+  returning: 0
 --- !u!195 &1343781232
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -13646,8 +13660,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe55b15204a3f7642ac6a1f32c506c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnTime: 15
+  returnTime: 2
   timer: 0
+  returning: 0
 --- !u!195 &1374465846
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -14855,8 +14870,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe55b15204a3f7642ac6a1f32c506c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnTime: 15
+  returnTime: 2
   timer: 0
+  returning: 0
 --- !u!195 &1520623807
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -16272,8 +16288,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe55b15204a3f7642ac6a1f32c506c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnTime: 15
+  returnTime: 2
   timer: 0
+  returning: 0
 --- !u!195 &1680041617
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -16872,8 +16889,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe55b15204a3f7642ac6a1f32c506c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnTime: 15
+  returnTime: 2
   timer: 0
+  returning: 0
 --- !u!195 &1868171626
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -17268,8 +17286,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe55b15204a3f7642ac6a1f32c506c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnTime: 15
+  returnTime: 2
   timer: 0
+  returning: 0
 --- !u!195 &1919994951
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -17403,8 +17422,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe55b15204a3f7642ac6a1f32c506c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnTime: 15
+  returnTime: 2
   timer: 0
+  returning: 0
 --- !u!195 &1945922740
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -17538,8 +17558,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe55b15204a3f7642ac6a1f32c506c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnTime: 15
+  returnTime: 2
   timer: 0
+  returning: 0
 --- !u!195 &1948917062
 NavMeshAgent:
   m_ObjectHideFlags: 0

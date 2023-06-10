@@ -3,18 +3,20 @@ using UnityEngine.AI;
 
 public class NPCController : MonoBehaviour
 {
-   // public float movementSpeed;
-    public float returnTime; // Time in seconds before NPC returns to the target destination
+    // public float movementSpeed;
+    [SerializeField] private float returnTime; // Time in seconds before NPC returns to the target destination
 
     private NavMeshAgent navMeshAgent;
     private Vector3 initialPosition;
     [SerializeField] private float timer;
-    private bool returning;
+    public bool returning;
+
+    private GameManager gameManager;
 
     private void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-      //navMeshAgent.speed = movementSpeed;
+        //navMeshAgent.speed = movementSpeed;
 
         // Store the initial position as the target destination
         initialPosition = transform.position;
@@ -39,28 +41,29 @@ public class NPCController : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(returning);
+/*
         if (returning)
         {
-            timer -= Time.deltaTime;
-
-            if (timer <= 0f)
-            {
-                returning = false;
-
-                navMeshAgent.SetDestination(initialPosition);
-            }
+            navMeshAgent.SetDestination(initialPosition);
         }
-        else //returning is false
+        else
         {
             if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.5f)
-            {
-                timer = returnTime;
-                returning = true;
-
                 SetRandomDestination();
-            }
-        }
 
-        //SetRandomDestination();
+        }*/
+
+        while(gameManager.turn == 0)
+            //if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.5f)
+                SetRandomDestination();
+         //   else
+             //   navMeshAgent.SetDestination(initialPosition);
+
+    }
+    private void NPCReturn()
+    {
+        navMeshAgent.SetDestination(initialPosition);
     }
 }
+
