@@ -53,6 +53,7 @@ MonoBehaviour:
   neededRounds: 3
   built: 0
   constructionIcon: {fileID: 9083776456497069637}
+  constructionCrane: {fileID: 0}
   addedSocialPoints: 80
   addedNaturePoints: 0
   addedEconomyPoints: -10
@@ -285,7 +286,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 30f32d93210717348a05eb4c46d2d8f0,
         type: 3}
       propertyPath: m_Name
-      value: building5.2
+      value: Hospital
       objectReference: {fileID: 0}
     - target: {fileID: 1129496810705857465, guid: 30f32d93210717348a05eb4c46d2d8f0,
         type: 3}

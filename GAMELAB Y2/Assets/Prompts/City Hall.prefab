@@ -252,7 +252,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a3b17b1a6cbbbb4418d09ea89c8b6d60,
         type: 3}
       propertyPath: m_Name
-      value: buldingnewFinalUnwrapped
+      value: City Hall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3b17b1a6cbbbb4418d09ea89c8b6d60, type: 3}

@@ -182,6 +182,7 @@ MonoBehaviour:
   neededRounds: 2
   built: 0
   constructionIcon: {fileID: 2471928399416032350}
+  constructionCrane: {fileID: 0}
   addedSocialPoints: -30
   addedNaturePoints: -20
   addedEconomyPoints: 50
@@ -280,7 +281,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fd790f85c93dab34b826a00a1c51f0cd,
         type: 3}
       propertyPath: m_Name
-      value: buiding4.1
+      value: Business Office
       objectReference: {fileID: 0}
     - target: {fileID: 2786534777698132407, guid: fd790f85c93dab34b826a00a1c51f0cd,
         type: 3}

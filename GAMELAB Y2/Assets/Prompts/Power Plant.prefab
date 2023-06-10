@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2040877865454089344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1171.8, y: 0, z: -156.3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -53,6 +53,7 @@ MonoBehaviour:
   neededRounds: 3
   built: 0
   constructionIcon: {fileID: 9023156611179776190}
+  constructionCrane: {fileID: 0}
   addedSocialPoints: -50
   addedNaturePoints: 100
   addedEconomyPoints: 0
@@ -199,18 +200,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d201fc4d0d649a479bae280ef58da97,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2700
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3d201fc4d0d649a479bae280ef58da97,
+        type: 3}
       propertyPath: m_LocalScale.y
-      value: 1587.3983
+      value: 2658.981
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d201fc4d0d649a479bae280ef58da97,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 216.96373
+      value: 363.42636
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d201fc4d0d649a479bae280ef58da97,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d201fc4d0d649a479bae280ef58da97,
         type: 3}
@@ -220,7 +226,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3d201fc4d0d649a479bae280ef58da97,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d201fc4d0d649a479bae280ef58da97,
         type: 3}
@@ -256,6 +262,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3d201fc4d0d649a479bae280ef58da97,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3d201fc4d0d649a479bae280ef58da97,
         type: 3}
