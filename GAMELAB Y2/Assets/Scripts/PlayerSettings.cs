@@ -151,7 +151,7 @@ public class PlayerSettings : MonoBehaviour
 
     public void IncreaseIcon()
     {
-        if (iconSelected < 4)
+        if (iconSelected < icons.Count)
         {
             iconSelected += 1;
         }
@@ -168,7 +168,7 @@ public class PlayerSettings : MonoBehaviour
         }
         else
         {
-            iconSelected = 4;
+            iconSelected = icons.Count;
         }
     }
 }
