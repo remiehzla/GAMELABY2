@@ -20,6 +20,12 @@ public class RandomEvents : MonoBehaviour
     public GameObject currentSmokeEffect;
     public GameObject currentTile;
 
+    public GameObject earthquakePU;
+    public GameObject firePU;
+    public GameObject counterClockPU;
+    public GameObject increaseEconomyPU;
+    public GameObject decreaseEconomyPU;
+
     [SerializeField] private int randomTile;
 
     // Choosing events
@@ -126,6 +132,8 @@ public class RandomEvents : MonoBehaviour
         // Play a shaking + move down animation
         // Replace texture/disable tile
 
+        earthquakePU.SetActive(true);
+
         switch (gameManager.turn)
         {
             case 1:
@@ -162,6 +170,8 @@ public class RandomEvents : MonoBehaviour
 
     private void NaturalEvent()
     {
+        firePU.SetActive(true);
+
         switch (gameManager.turn)
         {
             case 1:
@@ -232,15 +242,21 @@ public class RandomEvents : MonoBehaviour
 
     private void CounterClockTurns()
     {
+        counterClockPU.SetActive(true);
+
         counterClockedTurns = true;
     }
 
     private void IncreaseEconomy()
     {
+        increaseEconomyPU.SetActive(true);
+
         gameManager.money += gameManager.money + Random.Range(10, 1000);
     } 
     private void DecreaseEconomy()
     {
+        decreaseEconomyPU.SetActive(true);     
+
         gameManager.money -= gameManager.money - Random.Range(10, 1000);
     }
 
