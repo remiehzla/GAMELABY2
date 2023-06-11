@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// NOT USED SCRIPT
 public class ResourceManager : MonoBehaviour
 {
     [SerializeField] [Range(0f, 2000)] public float money;
