@@ -23,6 +23,7 @@ public class Prompt : MonoBehaviour
     public int addedEconomyPoints;
 
     private GameManager gameManager;
+    private ResourceManager resourceManager;
 
 
 
@@ -33,12 +34,17 @@ public class Prompt : MonoBehaviour
         //promptName = gameObject.name;
 
         gameManager = FindObjectOfType<GameManager>();
+        resourceManager = FindObjectOfType<ResourceManager>();
 
         if (gameManager.money >= neededMoney && gameManager.manpower >= neededManpower)
         {
             gameManager.money = gameManager.money -= neededMoney;
             gameManager.manpower = gameManager.manpower -= neededManpower;
             placedInRound = gameManager.round;
+
+            //The bar value goes down
+            resourceManager.money = resourceManager.money -= neededMoney;
+            resourceManager.manpower = resourceManager.manpower -= neededManpower;
         }
         else
         {

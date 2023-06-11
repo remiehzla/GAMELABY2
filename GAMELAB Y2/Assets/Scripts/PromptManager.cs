@@ -66,9 +66,9 @@ public class PromptManager : MonoBehaviour
                 string neededRounds = prompts[i].GetComponent<Prompt>().neededRounds.ToString();
                 promptChoice[x] = i;
                 promptChoiceTextName[x].text = promptName;
-                promptChoiceTextMoney[x].text = "Money needed: " + neededMoney;
-                promptChoiceTextManpower[x].text = "Manpower needed: " + neededManpower;
-                promptChoiceTextRounds[x].text = "Rounds needed: " + neededRounds;
+                promptChoiceTextMoney[x].text = neededMoney;
+                promptChoiceTextManpower[x].text = neededManpower;
+                promptChoiceTextRounds[x].text = neededRounds;
                 break;
             }
         }

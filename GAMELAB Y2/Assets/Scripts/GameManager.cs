@@ -41,8 +41,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text endButtonText;
 
     private PromptManager promptManager;
-
     private RandomEvents randomEvents;
+    private ResourceManager resourceManager;
 
     private bool isFading;
 
@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
         GetAnalytics();
         promptManager = FindObjectOfType<PromptManager>();
         randomEvents = FindObjectOfType<RandomEvents>();
+        resourceManager = FindObjectOfType<ResourceManager>();
 
     }
 
@@ -76,6 +77,8 @@ public class GameManager : MonoBehaviour
             playerCounter.text = "Amount of players: " + playerCount;
         }
 
+
+        // Using text
         moneyCounter.text = "Money: " + money.ToString();
         manpowerCounter.text = "Manpower: " + manpower.ToString();
         roundCounter.text = "Round: " + round.ToString();
