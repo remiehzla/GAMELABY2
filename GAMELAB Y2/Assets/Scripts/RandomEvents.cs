@@ -9,6 +9,7 @@ using Unity.UI;
 public class RandomEvents : MonoBehaviour
 {
     private GameManager gameManager;
+    private ClosePopUp closePopUp;
 
     // The four player' maps
     public GameObject map1;
@@ -57,6 +58,7 @@ public class RandomEvents : MonoBehaviour
     {
         GetAnalytics();
         gameManager = FindObjectOfType<GameManager>();
+        closePopUp = FindObjectOfType<ClosePopUp>();
     }
 
     private void Update()
@@ -66,6 +68,7 @@ public class RandomEvents : MonoBehaviour
         Debug.Log(currentTile);
     }
 
+    // Choose a random event
     private void ChooseEvent()
     {
         randomEvent = Random.Range(0, totalEvents);
@@ -133,6 +136,7 @@ public class RandomEvents : MonoBehaviour
         // Replace texture/disable tile
 
         earthquakePU.SetActive(true);
+        Debug.Log("Coroutine started");
 
         switch (gameManager.turn)
         {
@@ -171,6 +175,7 @@ public class RandomEvents : MonoBehaviour
     private void NaturalEvent()
     {
         firePU.SetActive(true);
+        Debug.Log("Coroutine started");
 
         switch (gameManager.turn)
         {
@@ -243,6 +248,7 @@ public class RandomEvents : MonoBehaviour
     private void CounterClockTurns()
     {
         counterClockPU.SetActive(true);
+        Debug.Log("Coroutine started");
 
         counterClockedTurns = true;
     }
@@ -250,12 +256,14 @@ public class RandomEvents : MonoBehaviour
     private void IncreaseEconomy()
     {
         increaseEconomyPU.SetActive(true);
+        Debug.Log("Coroutine started");
 
         gameManager.money += gameManager.money + Random.Range(10, 1000);
     } 
     private void DecreaseEconomy()
     {
-        decreaseEconomyPU.SetActive(true);     
+        decreaseEconomyPU.SetActive(true);
+        Debug.Log("Coroutine started");
 
         gameManager.money -= gameManager.money - Random.Range(10, 1000);
     }
