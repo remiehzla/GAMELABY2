@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Analytics;
 using Unity.Services.Analytics;
 using Unity.Services.Core;
+using Unity.UI;
 
 public class RandomEvents : MonoBehaviour
 {
