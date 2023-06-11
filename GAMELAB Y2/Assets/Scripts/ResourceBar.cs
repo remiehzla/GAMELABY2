@@ -44,7 +44,7 @@ public class ResourceBar : MonoBehaviour
         }
         else if (roundsBool)
         {
-            currentAmount = gameManager.maxRounds;
+            currentAmount = gameManager.round;
         }
         else
             Debug.LogError("No resource selected");
