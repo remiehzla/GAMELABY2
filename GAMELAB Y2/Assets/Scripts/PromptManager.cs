@@ -50,6 +50,19 @@ public class PromptManager : MonoBehaviour
         randomEvents = FindObjectOfType<RandomEvents>();
     }
 
+    private void Update()
+    {
+        // If any options are the same, reroll
+        if (promptChoice[0] != 0)
+        {
+            if (promptChoice[0] == promptChoice[1] || promptChoice[1] == promptChoice[2] || promptChoice[2] == promptChoice[0]
+            || promptChoice[0] == promptChoice[1] && promptChoice[0] == promptChoice[2])
+            {
+                RandomizePrompts();
+            }
+        }
+    }
+
     public void RandomizePrompts()
     {
         promptUI.SetActive(true);
@@ -71,14 +84,6 @@ public class PromptManager : MonoBehaviour
                 promptChoiceTextRounds[x].text = neededRounds;
                 break;
             }
-        }
-
-        // If any options are the same, reroll
-
-        if (promptChoice[0] == promptChoice[1] || promptChoice[1] == promptChoice[2] || promptChoice[2] == promptChoice[0] 
-        || promptChoice[0] == promptChoice[1] && promptChoice[0] == promptChoice[2])
-        {
-            RandomizePrompts();
         }
     }
 
