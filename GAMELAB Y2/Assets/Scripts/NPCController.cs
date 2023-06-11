@@ -3,12 +3,8 @@ using UnityEngine.AI;
 
 public class NPCController : MonoBehaviour
 {
-    // public float movementSpeed;
-    [SerializeField] private float returnTime; // Time in seconds before NPC returns to the target destination
-
     private NavMeshAgent navMeshAgent;
     private Vector3 initialPosition;
-    [SerializeField] private float timer;
     public bool returning;
 
     private GameManager gameManager;
@@ -16,11 +12,31 @@ public class NPCController : MonoBehaviour
     private void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        //navMeshAgent.speed = movementSpeed;
+        gameManager = FindObjectOfType<GameManager>();
 
         // Store the initial position as the target destination
         initialPosition = transform.position;
         SetRandomDestination();
+    }
+
+    private void Update()
+    {
+        Debug.Log(returning);
+        if (gameManager.turn != 0)
+            returning = true;
+        else
+            returning = false;
+
+        if (returning)
+        {
+            navMeshAgent.SetDestination(initialPosition);
+        }
+        else
+        {
+            if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.5f)
+                SetRandomDestination();
+
+        }
     }
 
     private void SetRandomDestination()
@@ -37,33 +53,6 @@ public class NPCController : MonoBehaviour
         Vector3 randomPoint = Vector3.Lerp(navMeshData.vertices[navMeshData.indices[randomIndex * 3 + 0]], navMeshData.vertices[navMeshData.indices[randomIndex * 3 + 1]], Random.value);
         randomPoint = Vector3.Lerp(randomPoint, navMeshData.vertices[navMeshData.indices[randomIndex * 3 + 2]], Random.value);
         return randomPoint;
-    }
-
-    private void Update()
-    {
-        Debug.Log(returning);
-/*
-        if (returning)
-        {
-            navMeshAgent.SetDestination(initialPosition);
-        }
-        else
-        {
-            if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.5f)
-                SetRandomDestination();
-
-        }*/
-
-        while(gameManager.turn == 0)
-            //if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.5f)
-                SetRandomDestination();
-         //   else
-             //   navMeshAgent.SetDestination(initialPosition);
-
-    }
-    private void NPCReturn()
-    {
-        navMeshAgent.SetDestination(initialPosition);
     }
 }
 
