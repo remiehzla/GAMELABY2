@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class SetVolume: MonoBehaviour
+public class SoundManager: MonoBehaviour
 {
     [SerializeField] Slider volumeSlider;
 
