@@ -67,7 +67,6 @@ public class RandomEvents : MonoBehaviour
     {
         if (currentTurn != gameManager.turn)
             ChooseEvent();
-        Debug.Log(currentTile);
     }
 
     // Choose a random event
