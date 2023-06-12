@@ -24,7 +24,7 @@ public class Prompt : MonoBehaviour
 
     private GameManager gameManager;
     private ResourceManager resourceManager;
-
+    private NotEnoughResourcesPopup notEnoughResourcesPopup;
 
 
     void Start()
@@ -32,21 +32,17 @@ public class Prompt : MonoBehaviour
         // Check if there are enough resources to build the prompt, if not destroy it
 
         gameManager = FindObjectOfType<GameManager>();
-        resourceManager = FindObjectOfType<ResourceManager>();
+        notEnoughResourcesPopup = FindObjectOfType<NotEnoughResourcesPopup>();
 
         if (gameManager.money >= neededMoney && gameManager.manpower >= neededManpower)
         {
             gameManager.money = gameManager.money -= neededMoney;
             gameManager.manpower = gameManager.manpower -= neededManpower;
             placedInRound = gameManager.round;
-
-            //The bar value goes down
-
-            resourceManager.money = resourceManager.money -= neededMoney;
-            resourceManager.manpower = resourceManager.manpower -= neededManpower;
         }
         else
         {
+            notEnoughResourcesPopup.insufficientResourcesPU.SetActive(true);
             DestroyPrompt();
         }
     }
