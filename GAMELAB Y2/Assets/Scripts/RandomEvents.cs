@@ -138,7 +138,7 @@ public class RandomEvents : MonoBehaviour
         // Replace texture/disable tile
 
         // Pop-up
-        earthquakePU.SetActive(true);
+        StartCoroutine(DelaySetActive(earthquakePU, true));
 
         // Play the camera shake effect
         cameraMovement.Shake();
@@ -179,8 +179,7 @@ public class RandomEvents : MonoBehaviour
 
     private void NaturalEvent()
     {
-        firePU.SetActive(true);
-        Debug.Log("Coroutine started");
+        StartCoroutine(DelaySetActive(firePU, true));
 
         switch (gameManager.turn)
         {
@@ -252,23 +251,20 @@ public class RandomEvents : MonoBehaviour
 
     private void CounterClockTurns()
     {
-        counterClockPU.SetActive(true);
-        Debug.Log("Coroutine started");
+        StartCoroutine(DelaySetActive(counterClockPU, true));
 
         counterClockedTurns = true;
     }
 
     private void IncreaseEconomy()
     {
-        increaseEconomyPU.SetActive(true);
-        Debug.Log("Coroutine started");
+        StartCoroutine(DelaySetActive(increaseEconomyPU, true));
 
         gameManager.money += gameManager.money + Random.Range(10, 1000);
     } 
     private void DecreaseEconomy()
     {
-        decreaseEconomyPU.SetActive(true);
-        Debug.Log("Coroutine started");
+        StartCoroutine(DelaySetActive(decreaseEconomyPU, true));
 
         gameManager.money -= gameManager.money - Random.Range(10, 1000);
     }
@@ -279,6 +275,12 @@ public class RandomEvents : MonoBehaviour
         Destroy(currentTile.GetComponent<Tile>().prompt);
         currentTile = null;
         smokeEffectInstance.SetActive(false);
+    }
+
+    private IEnumerator DelaySetActive(GameObject gameObject, bool setActive)
+    {
+        yield return new WaitForSeconds(1);
+        gameObject.SetActive(setActive);
     }
 
     private void NoEvent()
