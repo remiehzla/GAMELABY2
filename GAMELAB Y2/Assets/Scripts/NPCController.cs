@@ -5,14 +5,10 @@ public class NPCController : MonoBehaviour
 {
     private NavMeshAgent navMeshAgent;
     private Vector3 initialPosition;
-    public bool returning;
-
-    private GameManager gameManager;
 
     private void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        gameManager = FindObjectOfType<GameManager>();
 
         // Store the initial position as the target destination
         initialPosition = transform.position;
@@ -21,21 +17,9 @@ public class NPCController : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(returning);
-        if (gameManager.turn != 0)
-            returning = true;
-        else
-            returning = false;
-
-        if (returning)
+        if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.5f)
         {
-            navMeshAgent.SetDestination(initialPosition);
-        }
-        else
-        {
-            if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.5f)
-                SetRandomDestination();
-
+            SetRandomDestination();
         }
     }
 
@@ -45,7 +29,6 @@ public class NPCController : MonoBehaviour
         navMeshAgent.SetDestination(randomPoint);
     }
 
-    // Move towards a random direction on the map
     private Vector3 GetRandomPointOnNavMesh()
     {
         NavMeshTriangulation navMeshData = NavMesh.CalculateTriangulation();
@@ -55,4 +38,3 @@ public class NPCController : MonoBehaviour
         return randomPoint;
     }
 }
-
