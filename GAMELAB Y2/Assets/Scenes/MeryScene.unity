@@ -8061,6 +8061,7 @@ MonoBehaviour:
   maxZoom: 0
   duration: 3
   magnitude: 0.2
+  elapsed: 0
 --- !u!95 &836531454
 Animator:
   serializedVersion: 5
@@ -10670,7 +10671,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1158623475
 MonoBehaviour:
   m_ObjectHideFlags: 0

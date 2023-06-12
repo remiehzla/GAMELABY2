@@ -13120,7 +13120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &660433807
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15726,8 +15726,11 @@ MonoBehaviour:
   zoomSpeed: 1.01
   minZoom: 125
   maxZoom: 500
-  duration: 0
-  magnitude: 0
+  duration: 2
+  magnitude: 5
+  elapsed: 0
+  delayBeforeShake: 1.5
+  maxDistance: 100
 --- !u!95 &836531454
 Animator:
   serializedVersion: 5

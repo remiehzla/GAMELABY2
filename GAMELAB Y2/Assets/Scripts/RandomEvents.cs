@@ -10,6 +10,7 @@ public class RandomEvents : MonoBehaviour
 {
     private GameManager gameManager;
     private ClosePopUp closePopUp;
+    private CameraMovement cameraMovement;
 
     // The four player' maps
     public GameObject map1;
@@ -59,6 +60,7 @@ public class RandomEvents : MonoBehaviour
         GetAnalytics();
         gameManager = FindObjectOfType<GameManager>();
         closePopUp = FindObjectOfType<ClosePopUp>();
+        cameraMovement = FindObjectOfType<CameraMovement>();
     }
 
     private void Update()
@@ -135,8 +137,11 @@ public class RandomEvents : MonoBehaviour
         // Play a shaking + move down animation
         // Replace texture/disable tile
 
+        // Pop-up
         earthquakePU.SetActive(true);
-        Debug.Log("Coroutine started");
+
+        // Play the camera shake effect
+        cameraMovement.Shake();
 
         switch (gameManager.turn)
         {
