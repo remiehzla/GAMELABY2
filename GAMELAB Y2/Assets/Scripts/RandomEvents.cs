@@ -114,10 +114,10 @@ public class RandomEvents : MonoBehaviour
                         break;
 
                     case 6:
-                        NoEvent();
+                        Invoke("IncreaseEconomy", 1);
                         break;
                     case 7:
-                        NoEvent();
+                        Invoke("IncreaseEconomy", 1);
                         break;
                     case 8:
                         NoEvent();

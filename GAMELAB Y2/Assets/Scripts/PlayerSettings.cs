@@ -88,7 +88,7 @@ public class PlayerSettings : MonoBehaviour
             {
                 case 0:
                     {
-                        playerNameTextGameplay.text = "Unknown";
+                        playerNameTextGameplay.text = "";
                         iconImageGameplay.sprite = null;
                         iconImageGameplay.enabled = false;
                         break;
