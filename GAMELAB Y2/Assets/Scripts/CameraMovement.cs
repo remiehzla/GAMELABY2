@@ -14,6 +14,9 @@ public class CameraMovement : MonoBehaviour
 
     [SerializeField] private float duration;
     [SerializeField] private float magnitude;
+    [SerializeField] private float elapsed;
+    [SerializeField] private float delayBeforeShake;
+    [SerializeField] private float maxDistance;
 
     private GameManager gameManager;
     private Animator animator;
@@ -34,8 +37,7 @@ public class CameraMovement : MonoBehaviour
         else
         {
             animator.SetBool("ZoomedIn", true);
-        }
-        Shake();
+        }        
     }
 
     // Update is called once per frame
@@ -74,20 +76,34 @@ public class CameraMovement : MonoBehaviour
 
     public void Shake()
     {
+        StartCoroutine(ShakeCoroutine());
+    }
+
+    private IEnumerator ShakeCoroutine()
+    {
+        float elapsed = 0f;
+
+        // Wait for a delay before capturing the original position
+        yield return new WaitForSeconds(delayBeforeShake);
+
         Vector3 originalPos = transform.localPosition;
-
-        float elapsed = 0.0f;
-
 
         while (elapsed < duration)
         {
-            float x = Random.Range(-1f, 1f) * magnitude;
-            float y = Random.Range(-1f, 1f) * magnitude;
-            this.gameObject.transform.localPosition = new Vector3(x, y, originalPos.z);
+            // Calculate the shake amount using a Perlin noise function
+            float x = Mathf.PerlinNoise(Time.time * magnitude, 0f) * 2f - 1f;
+            float y = Mathf.PerlinNoise(0f, Time.time * magnitude) * 2f - 1f;
+
+            // Apply the shake offset to the camera's position
+            Vector3 shakeOffset = new Vector3(x, y, 0f) * magnitude;
+            transform.localPosition = originalPos + Vector3.ClampMagnitude(shakeOffset, maxDistance);
 
             elapsed += Time.deltaTime;
-            break;
+            yield return null;
         }
-        this.gameObject.transform.localPosition = originalPos;
+
+        // Reset the camera's position
+        transform.localPosition = originalPos;
     }
+
 }
