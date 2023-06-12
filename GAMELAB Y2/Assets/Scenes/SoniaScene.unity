@@ -172,7 +172,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.7999802, y: 6.1999893}
+  m_AnchoredPosition: {x: 1.7999878, y: 6.1999893}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7294112
@@ -1975,7 +1975,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 227.40002, y: -1.5000267}
+  m_AnchoredPosition: {x: 288.00006, y: -1.5000267}
   m_SizeDelta: {x: 63.5, y: 28.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &149388822
@@ -12217,8 +12217,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -210.9, y: 54.000004}
-  m_SizeDelta: {x: 249.4, y: 93}
+  m_AnchoredPosition: {x: -270.99997, y: 54.000004}
+  m_SizeDelta: {x: 317.41, y: 93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &627182668
 MonoBehaviour:
@@ -13120,7 +13120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &660433807
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13519,7 +13519,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 54}
-  m_SizeDelta: {x: 249.4, y: 93}
+  m_SizeDelta: {x: 317.41, y: 93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &682339911
 MonoBehaviour:
@@ -14349,7 +14349,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -185.9, y: -1.5}
+  m_AnchoredPosition: {x: -246, y: -1.5}
   m_SizeDelta: {x: 56.4, y: 26.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &731996495
@@ -14527,7 +14527,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -185.9, y: -36.500027}
+  m_AnchoredPosition: {x: -245.99998, y: -36.500027}
   m_SizeDelta: {x: 56.4, y: 26.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &751015877
@@ -15726,6 +15726,8 @@ MonoBehaviour:
   zoomSpeed: 1.01
   minZoom: 125
   maxZoom: 500
+  duration: 0
+  magnitude: 0
 --- !u!95 &836531454
 Animator:
   serializedVersion: 5
@@ -17150,7 +17152,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 227.40002, y: -70.50003}
+  m_AnchoredPosition: {x: 288.00006, y: -70.50003}
   m_SizeDelta: {x: 63.8, y: 28.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &951376417
@@ -19617,7 +19619,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 227.4, y: -36.500027}
+  m_AnchoredPosition: {x: 288, y: -36.500027}
   m_SizeDelta: {x: 63.9, y: 27.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1156054872
@@ -20805,9 +20807,15 @@ MonoBehaviour:
   naturePointText: {fileID: 1873581902}
   economyPointText: {fileID: 73364893}
   totalPointText: {fileID: 942703137}
-  opponent1: {fileID: 1646792600}
-  opponent2: {fileID: 1580107364}
-  opponent3: {fileID: 1409132194}
+  opponents: []
+  UIColor:
+    serializedVersion: 2
+    rgba: 0
+  winUIColor:
+    serializedVersion: 2
+    rgba: 0
+  heartParticles: {fileID: 0}
+  rainParticles: {fileID: 0}
 --- !u!4 &1272070223
 Transform:
   m_ObjectHideFlags: 0
@@ -21628,8 +21636,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 210.40002, y: 54.000004}
-  m_SizeDelta: {x: 249.4, y: 93}
+  m_AnchoredPosition: {x: 271.00006, y: 54.000004}
+  m_SizeDelta: {x: 317.41, y: 93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1319989411
 MonoBehaviour:
@@ -28181,9 +28189,15 @@ MonoBehaviour:
   naturePointText: {fileID: 776560227}
   economyPointText: {fileID: 915291520}
   totalPointText: {fileID: 1866863575}
-  opponent1: {fileID: 1646792600}
-  opponent2: {fileID: 1272070222}
-  opponent3: {fileID: 1580107364}
+  opponents: []
+  UIColor:
+    serializedVersion: 2
+    rgba: 0
+  winUIColor:
+    serializedVersion: 2
+    rgba: 0
+  heartParticles: {fileID: 0}
+  rainParticles: {fileID: 0}
 --- !u!4 &1409132195
 Transform:
   m_ObjectHideFlags: 0
@@ -30193,9 +30207,15 @@ MonoBehaviour:
   naturePointText: {fileID: 1729682132}
   economyPointText: {fileID: 1294586555}
   totalPointText: {fileID: 597659895}
-  opponent1: {fileID: 1646792600}
-  opponent2: {fileID: 1272070222}
-  opponent3: {fileID: 1409132194}
+  opponents: []
+  UIColor:
+    serializedVersion: 2
+    rgba: 0
+  winUIColor:
+    serializedVersion: 2
+    rgba: 0
+  heartParticles: {fileID: 0}
+  rainParticles: {fileID: 0}
 --- !u!4 &1580107365
 Transform:
   m_ObjectHideFlags: 0
@@ -30988,7 +31008,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.7999802, y: 6.1999893}
+  m_AnchoredPosition: {x: 1.7999878, y: 6.1999893}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1640791592
@@ -31163,9 +31183,15 @@ MonoBehaviour:
   naturePointText: {fileID: 1334138534}
   economyPointText: {fileID: 1143630502}
   totalPointText: {fileID: 872408625}
-  opponent1: {fileID: 1272070222}
-  opponent2: {fileID: 1580107364}
-  opponent3: {fileID: 1409132194}
+  opponents: []
+  UIColor:
+    serializedVersion: 2
+    rgba: 0
+  winUIColor:
+    serializedVersion: 2
+    rgba: 0
+  heartParticles: {fileID: 0}
+  rainParticles: {fileID: 0}
 --- !u!4 &1649152378 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9018621373584626118, guid: 4c570856fc9e0814cacd5977a7db5a7e,
@@ -31779,7 +31805,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -185.9, y: -70.50003}
+  m_AnchoredPosition: {x: -245.99998, y: -70.50003}
   m_SizeDelta: {x: 56.4, y: 26.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1729598129

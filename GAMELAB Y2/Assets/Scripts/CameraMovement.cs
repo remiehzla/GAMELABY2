@@ -14,6 +14,9 @@ public class CameraMovement : MonoBehaviour
 
     [SerializeField] private float duration;
     [SerializeField] private float magnitude;
+    [SerializeField] private float elapsed;
+
+
 
     private GameManager gameManager;
     private Animator animator;
@@ -27,6 +30,8 @@ public class CameraMovement : MonoBehaviour
 
     private void Update()
     {
+        Shake();
+
         if (gameManager.turn == 0)
         {
             animator.SetBool("ZoomedIn", false);
@@ -35,7 +40,9 @@ public class CameraMovement : MonoBehaviour
         {
             animator.SetBool("ZoomedIn", true);
         }
-        Shake();
+
+        Debug.Log(elapsed);
+        
     }
 
     // Update is called once per frame
@@ -74,20 +81,22 @@ public class CameraMovement : MonoBehaviour
 
     public void Shake()
     {
-        Vector3 originalPos = transform.localPosition;
+        Vector3 originalPos = this.gameObject.transform.localPosition;
 
-        float elapsed = 0.0f;
-
+         //elapsed = 0.0f;
 
         while (elapsed < duration)
         {
-            float x = Random.Range(-1f, 1f) * magnitude;
-            float y = Random.Range(-1f, 1f) * magnitude;
-            this.gameObject.transform.localPosition = new Vector3(x, y, originalPos.z);
+            //float x = Random.Range(-1f, 1f) * magnitude;
+            float y = Random.Range(-10f, 10f) * magnitude;
+            //this.gameObject.transform.localPosition = new Vector3(x, y, originalPos.z);
+            gameObject.transform.Translate(0, y, 0, Space.Self);
 
             elapsed += Time.deltaTime;
             break;
         }
-        this.gameObject.transform.localPosition = originalPos;
+        //this.gameObject.transform.localPosition = originalPos;
+        gameObject.transform.Translate(0, 0, 0);
+
     }
 }

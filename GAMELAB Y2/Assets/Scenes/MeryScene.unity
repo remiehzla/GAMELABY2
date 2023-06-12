@@ -8059,8 +8059,8 @@ MonoBehaviour:
   zoomSpeed: 0
   minZoom: 0
   maxZoom: 0
-  duration: 5
-  magnitude: 1
+  duration: 3
+  magnitude: 0.2
 --- !u!95 &836531454
 Animator:
   serializedVersion: 5
