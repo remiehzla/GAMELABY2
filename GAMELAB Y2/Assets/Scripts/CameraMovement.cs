@@ -12,6 +12,9 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private float minZoom;
     [SerializeField] private float maxZoom;
 
+    [SerializeField] private float duration;
+    [SerializeField] private float magnitude;
+
     private GameManager gameManager;
     private Animator animator;
 
@@ -32,6 +35,7 @@ public class CameraMovement : MonoBehaviour
         {
             animator.SetBool("ZoomedIn", true);
         }
+        Shake();
     }
 
     // Update is called once per frame
@@ -66,5 +70,24 @@ public class CameraMovement : MonoBehaviour
     void MoveCamera()
     {
         gameObject.transform.Translate(horizontalInput / 100f * moveSpeed, verticalInput / 100f * moveSpeed, 0f, Space.Self);
+    }
+
+    public void Shake()
+    {
+        Vector3 originalPos = transform.localPosition;
+
+        float elapsed = 0.0f;
+
+
+        while (elapsed < duration)
+        {
+            float x = Random.Range(-1f, 1f) * magnitude;
+            float y = Random.Range(-1f, 1f) * magnitude;
+            this.gameObject.transform.localPosition = new Vector3(x, y, originalPos.z);
+
+            elapsed += Time.deltaTime;
+            break;
+        }
+        this.gameObject.transform.localPosition = originalPos;
     }
 }
