@@ -14950,11 +14950,11 @@ MonoBehaviour:
   zoomSpeed: 1.01
   minZoom: 125
   maxZoom: 500
-  duration: 0
-  magnitude: 0
+  duration: 2
+  magnitude: 5
   elapsed: 0
-  delayBeforeShake: 0
-  maxDistance: 0
+  delayBeforeShake: 1.5
+  maxDistance: 100
 --- !u!95 &836531454
 Animator:
   serializedVersion: 5
