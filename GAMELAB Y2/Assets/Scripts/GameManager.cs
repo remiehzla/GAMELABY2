@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
         
         moneyCounter.text = money.ToString();
         manpowerCounter.text = manpower.ToString();
-        roundCounter.text = round.ToString();
+        //roundCounter.text = round.ToString();
         //turnCounter.text = turn.ToString();
 
         // Enable scoreboard when nobody has their turn

@@ -29,11 +29,11 @@ public class NPCManager : MonoBehaviour
         // If the turn becomes 0, activate the NPCs
         if (gameManager.turn == 0)
         {
-            ActivateNPCs();
+            StartCoroutine(ActivateNPCs());
         }
         else // If the turn is not 0, deactivate the NPCs
         {
-            DeactivateNPCs();
+            StartCoroutine(DeactivateNPCs());
         }
     }
 
@@ -51,8 +51,9 @@ public class NPCManager : MonoBehaviour
         }
     }
 
-    private void ActivateNPCs()
+    private IEnumerator ActivateNPCs()
     {
+        yield return new WaitForSeconds(2);
         foreach (NPCController npcController in npcControllers)
         {
             npcController.enabled = true; // Enable the NPCController script
@@ -60,8 +61,9 @@ public class NPCManager : MonoBehaviour
         }
     }
 
-    private void DeactivateNPCs()
+    private IEnumerator DeactivateNPCs()
     {
+        yield return new WaitForSeconds(2);
         foreach (NPCController npcController in npcControllers)
         {
             npcController.enabled = false; // Disable the NPCController script

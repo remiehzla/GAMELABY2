@@ -4,5 +4,11 @@ using UnityEngine;
 
 public class NotEnoughResourcesPopup : MonoBehaviour
 {
+    ClosePopUp closePopUp;
     public GameObject insufficientResourcesPU;
+
+    private void Update()
+    {
+        closePopUp.AutomaticallyClosePopUp();
+    }
 }
