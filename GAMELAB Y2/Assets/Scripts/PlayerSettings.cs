@@ -27,10 +27,7 @@ public class PlayerSettings : MonoBehaviour
     [SerializeField] private Image iconImage;
     private int iconSelected = 1;
 
-    [SerializeField] private Text playerName1Text;
-    [SerializeField] private Text playerName2Text;
-    [SerializeField] private Text playerName3Text;
-    [SerializeField] private Text playerName4Text;
+    [SerializeField] private List<Text> playerNameText = new List<Text>();
 
     [SerializeField] private Text playerNameTextGameplay;
     [SerializeField] private Image iconImageGameplay;
@@ -128,10 +125,10 @@ public class PlayerSettings : MonoBehaviour
         }
         else
         {
-            playerName1Text.text = "Player 1: " + playerName1;
-            playerName2Text.text = "Player 2: " + playerName2;
-            playerName3Text.text = "Player 3: " + playerName3;
-            playerName4Text.text = "Player 4: " + playerName4;
+            playerNameText[0].text = "Player 1: " + playerName1;
+            playerNameText[1].text = "Player 2: " + playerName2;
+            playerNameText[2].text = "Player 3: " + playerName3;
+            playerNameText[3].text = "Player 4: " + playerName4;
         }
     }
 

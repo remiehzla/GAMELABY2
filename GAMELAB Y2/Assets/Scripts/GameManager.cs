@@ -20,11 +20,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Transform cameraTransform;
 
-    [SerializeField] private Transform cameraFocusDay;
-    [SerializeField] private Transform cameraFocusP1;
-    [SerializeField] private Transform cameraFocusP2;
-    [SerializeField] private Transform cameraFocusP3;
-    [SerializeField] private Transform cameraFocusP4;
+    public List<Transform> cameraFocus = new List<Transform>();
 
     [SerializeField] private Animator fadeScreen;
 
@@ -77,12 +73,12 @@ public class GameManager : MonoBehaviour
             playerCounter.text = "Amount of players: " + playerCount;
         }
 
-
-        // Using text
         moneyCounter.text = "Money: " + money.ToString();
         manpowerCounter.text = "Manpower: " + manpower.ToString();
         roundCounter.text = "Round: " + round.ToString();
         turnCounter.text = "Player: " + turn.ToString();
+
+        // Enable scoreboard when nobody has their turn
 
         if (turn == 0)
         {
@@ -97,33 +93,11 @@ public class GameManager : MonoBehaviour
             pointDisplay.GetComponent<Animator>().SetBool("Enabled", false);
         }
 
+        // Update UI to end game after rounds are over
+
         if (round > maxRounds)
         {
             endButtonText.text = "Back to menu";
-        }
-
-        if (turn == 0)
-        {
-            //fadeScreen.gameObject.SetActive(false);
-        }
-        else
-        {
-            //fadeScreen.gameObject.SetActive(true);
-        }
-    }
-
-    public void IncreasePlayerCount()
-    {
-        if (playerCount < 4)
-        {
-            playerCount += 1;
-        }
-    }
-    public void DecreasePlayerCount()
-    {
-        if (playerCount > 2)
-        {
-            playerCount -= 1;
         }
     }
 
@@ -187,27 +161,11 @@ public class GameManager : MonoBehaviour
         // Move the camera && reroll UI tiles when turn switches
 
         isFading = false;
-        switch (turn)
+
+        cameraTransform.position = cameraFocus[turn].position;
+        if (turn != 0)
         {
-            case 0:
-                cameraTransform.position = cameraFocusDay.position;
-                break;
-            case 1:
-                cameraTransform.position = cameraFocusP1.position;
-                promptManager.RandomizePrompts();
-                break;
-            case 2:
-                cameraTransform.position = cameraFocusP2.position;
-                promptManager.RandomizePrompts();
-                break;
-            case 3:
-                cameraTransform.position = cameraFocusP3.position;
-                promptManager.RandomizePrompts();
-                break;
-            case 4:
-                cameraTransform.position = cameraFocusP4.position;
-                promptManager.RandomizePrompts();
-                break;
+            promptManager.RandomizePrompts();
         }
     }
 
@@ -220,7 +178,7 @@ public class GameManager : MonoBehaviour
 
     void EndGame()
     {
-        // Restarts the scene, if that wasn't clear already
+        // Restart the scene and send analytics
 
         Dictionary<string, object> parameters = new Dictionary<string, object>()
             {

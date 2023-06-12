@@ -10,6 +10,7 @@ public class Tile : MonoBehaviour
     public bool hasPrompt;
 
     public GameObject prompt;
+    private Prompt promptClass;
     public PointCounter pointCounter;
 
     [SerializeField] private Material defaultMaterial;
@@ -34,19 +35,23 @@ public class Tile : MonoBehaviour
         {
             hasPrompt = false;
         }
+        else
+        {
+            promptClass = prompt.GetComponent<Prompt>();
+        }
 
         // Add the points gained from the prompt once every round on turn 0
 
-        if (hasPrompt && prompt.GetComponent<Prompt>().built)
+        if (hasPrompt && promptClass.built)
         {
             if (gameManager.turn == 0 && !hasGivenPoints)
             {
                 hasGivenPoints = true;
-                pointCounter.socialPoints = pointCounter.socialPoints += prompt.GetComponent<Prompt>().addedSocialPoints;
-                pointCounter.naturePoints = pointCounter.naturePoints += prompt.GetComponent<Prompt>().addedNaturePoints;
-                pointCounter.economyPoints = pointCounter.economyPoints += prompt.GetComponent<Prompt>().addedEconomyPoints;
-                pointCounter.totalPoints = pointCounter.totalPoints += prompt.GetComponent<Prompt>().addedSocialPoints += 
-                    prompt.GetComponent<Prompt>().addedNaturePoints += prompt.GetComponent<Prompt>().addedEconomyPoints;
+                pointCounter.socialPoints = pointCounter.socialPoints += promptClass.addedSocialPoints;
+                pointCounter.naturePoints = pointCounter.naturePoints += promptClass.addedNaturePoints;
+                pointCounter.economyPoints = pointCounter.economyPoints += promptClass.addedEconomyPoints;
+                pointCounter.totalPoints = pointCounter.totalPoints += promptClass.addedSocialPoints += 
+                    prompt.GetComponent<Prompt>().addedNaturePoints += promptClass.addedEconomyPoints;
             }
             else if (gameManager.turn > 0)
             {

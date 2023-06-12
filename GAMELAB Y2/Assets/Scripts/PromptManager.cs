@@ -53,6 +53,7 @@ public class PromptManager : MonoBehaviour
     private void Update()
     {
         // If any options are the same, reroll
+
         if (promptChoice[0] != 0)
         {
             if (promptChoice[0] == promptChoice[1] || promptChoice[1] == promptChoice[2] || promptChoice[2] == promptChoice[0]
@@ -73,10 +74,11 @@ public class PromptManager : MonoBehaviour
         {
             for (int i = Random.Range(1, prompts.Count); i <= prompts.Count; i++)
             {
-                string promptName = prompts[i].GetComponent<Prompt>().promptName;
-                string neededMoney = prompts[i].GetComponent<Prompt>().neededMoney.ToString();
-                string neededManpower = prompts[i].GetComponent<Prompt>().neededManpower.ToString();
-                string neededRounds = prompts[i].GetComponent<Prompt>().neededRounds.ToString();
+                Prompt prompt = prompts[i].GetComponent<Prompt>();
+                string promptName = prompt.promptName;
+                string neededMoney = prompt.neededMoney.ToString();
+                string neededManpower = prompt.neededManpower.ToString();
+                string neededRounds = prompt.neededRounds.ToString();
                 promptChoice[x] = i;
                 promptChoiceTextName[x].text = promptName;
                 promptChoiceTextMoney[x].text = neededMoney;
@@ -87,21 +89,12 @@ public class PromptManager : MonoBehaviour
         }
     }
 
-    public void ChoosePrompt1()
+    public void ChoosePrompt(int promptIndex)
     {
-        selectedPrompt = promptChoice[0];
+        selectedPrompt = promptChoice[promptIndex];
         promptUI.SetActive(false);
     }
-    public void ChoosePrompt2()
-    {
-        selectedPrompt = promptChoice[1];
-        promptUI.SetActive(false);
-    }
-    public void ChoosePrompt3()
-    {
-        selectedPrompt = promptChoice[2];
-        promptUI.SetActive(false);
-    }
+
     public void ChooseDemolish()
     {
         demolishMode = true;
@@ -176,9 +169,12 @@ public class PromptManager : MonoBehaviour
                     { "demolishedPrompts", + 1 },
                 };
                 AnalyticsService.Instance.CustomData("countDemolishedPrompts", parameters);
+                
                 prompt.GetComponent<Prompt>().DestroyPrompt();
+
                 selectedPrompt = 0;
                 demolishMode = false;
+
                 if (randomEvents.counterClockedTurns)
                     gameManager.DecreaseTurn();
                 else

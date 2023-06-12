@@ -31,8 +31,6 @@ public class Prompt : MonoBehaviour
     {
         // Check if there are enough resources to build the prompt, if not destroy it
 
-        //promptName = gameObject.name;
-
         gameManager = FindObjectOfType<GameManager>();
         resourceManager = FindObjectOfType<ResourceManager>();
 
@@ -43,6 +41,7 @@ public class Prompt : MonoBehaviour
             placedInRound = gameManager.round;
 
             //The bar value goes down
+
             resourceManager.money = resourceManager.money -= neededMoney;
             resourceManager.manpower = resourceManager.manpower -= neededManpower;
         }
@@ -64,12 +63,12 @@ public class Prompt : MonoBehaviour
         if (built)
         {
             constructionIcon.SetActive(false);
-            //constructionCrane.SetActive(false);
+            constructionCrane.SetActive(false);
         }
         else
         {
             constructionIcon.SetActive(true);
-            //constructionCrane.SetActive(true);
+            constructionCrane.SetActive(true);
         }
     }
 

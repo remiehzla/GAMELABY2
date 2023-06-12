@@ -12,15 +12,22 @@ public class PointCounter : MonoBehaviour
     public int economyPoints;
     public int totalPoints;
 
+    private bool isWinning;
+    private bool isLosing;
+
     [SerializeField] private Image panel;
     [SerializeField] private Text socialPointText;
     [SerializeField] private Text naturePointText;
     [SerializeField] private Text economyPointText;
     [SerializeField] private Text totalPointText;
 
-    [SerializeField] private PointCounter opponent1;
-    [SerializeField] private PointCounter opponent2;
-    [SerializeField] private PointCounter opponent3;
+    [SerializeField] private List<PointCounter> opponents = new List<PointCounter>();
+
+    [SerializeField] private Color32 UIColor;
+    [SerializeField] private Color32 winUIColor;
+
+    [SerializeField] private GameObject heartParticles;
+    [SerializeField] private GameObject rainParticles;
 
     private GameManager gameManager;
 
@@ -60,27 +67,60 @@ public class PointCounter : MonoBehaviour
                 }
         }
 
-        // Compare points once rounds are over and change UI color for the winner
+        // Compare if player has more points or less than all of its opponents
 
-        if (gameManager.round > gameManager.maxRounds && totalPoints >= opponent1.totalPoints 
-            && totalPoints >= opponent2.totalPoints && totalPoints >= opponent3.totalPoints)
+        if (totalPoints >= opponents[0].totalPoints && totalPoints >=
+            opponents[1].totalPoints && totalPoints >= opponents[2].totalPoints)
         {
-            panel.color = new Color32(255, 255, 0, 255);
+            isWinning = true;
         }
         else
         {
-            panel.color = new Color32(255, 255, 255, 255);
+            isWinning = false;
         }
 
-        // Disable counter if player isn't playing
-
-        if (player > GameManager.playerCount)
+        if (totalPoints < opponents[0].totalPoints && totalPoints <
+            opponents[1].totalPoints && totalPoints < opponents[2].totalPoints)
         {
-            panel.enabled = false;
-            socialPointText.enabled = false;
-            naturePointText.enabled = false;
-            economyPointText.enabled = false;
-            totalPointText.enabled = false;
+            isLosing = true;
+        }
+        else
+        {
+            isLosing = false;
+        }
+
+        // Enable UI and particles based on if a player is winning or losing
+
+        if (isWinning)
+        {
+            if (gameManager.round > gameManager.maxRounds)
+            {
+                panel.color = winUIColor;
+            }
+            else
+            {
+                panel.color = UIColor;
+            }
+        }
+
+        // Toggle particles
+
+        if (isWinning && gameManager.turn == 0)
+        { 
+            heartParticles.SetActive(true);
+        }
+        else
+        {
+            heartParticles.SetActive(false);
+        }
+
+        if (isLosing && gameManager.turn == 0)
+        {
+            rainParticles.SetActive(true);
+        }
+        else
+        {
+            rainParticles.SetActive(false);
         }
     }
 }
