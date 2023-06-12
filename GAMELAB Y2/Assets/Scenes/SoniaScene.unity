@@ -37108,6 +37108,8 @@ MonoBehaviour:
     type: 3}
   currentSmokeEffect: {fileID: 0}
   currentTile: {fileID: 0}
+  coinBurstEffect: {fileID: 1257886725480047885, guid: 3b9207f9fd48fe5488365d53b3ff824a,
+    type: 3}
   earthquakePU: {fileID: 191747739}
   firePU: {fileID: 1281537890}
   counterClockPU: {fileID: 351153602}
