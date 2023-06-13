@@ -20199,8 +20199,8 @@ Canvas:
   m_GameObject: {fileID: 1158623474}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 330585545}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -26488,7 +26488,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -123, y: -70.3}
+  m_AnchoredPosition: {x: -123, y: -70.29999}
   m_SizeDelta: {x: 217, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1608293817
@@ -27257,6 +27257,8 @@ MonoBehaviour:
     type: 3}
   currentSmokeEffect: {fileID: 0}
   currentTile: {fileID: 0}
+  coinBurstEffect: {fileID: 1257886725480047885, guid: 3b9207f9fd48fe5488365d53b3ff824a,
+    type: 3}
   earthquakePU: {fileID: 191747739}
   firePU: {fileID: 1427978666}
   counterClockPU: {fileID: 2142326664}
@@ -27266,7 +27268,7 @@ MonoBehaviour:
   currentTurn: 0
   randomEvent: 0
   totalEvents: 10
-  timeForEffect: 7
+  timeForEffect: 15
   promptFound: 0
   counterClockedTurns: 0
 --- !u!1 &1681332917
@@ -30011,7 +30013,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 439.9998, y: -0}
+  m_AnchoredPosition: {x: 439.9998, y: 0}
   m_SizeDelta: {x: 726.2, y: 76.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1888484930

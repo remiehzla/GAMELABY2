@@ -21,6 +21,10 @@ public class RandomEvents : MonoBehaviour
     public GameObject currentSmokeEffect;
     public GameObject currentTile;
 
+
+    //@mary dont forget to make a new gameobject so you can drag the prefab
+    public GameObject coinBurstEffect;
+
     public GameObject earthquakePU;
     public GameObject firePU;
     public GameObject counterClockPU;
@@ -257,8 +261,12 @@ public class RandomEvents : MonoBehaviour
     private void IncreaseEconomy()
     {
         StartCoroutine(DelaySetActive(increaseEconomyPU, true));
+        //this is for mary she needs it her reminder :)
+        GameObject.Instantiate(coinBurstEffect,increaseEconomyPU.transform.position,increaseEconomyPU.transform.rotation);
 
         gameManager.money += gameManager.money + Random.Range(10, 1000);
+
+
     } 
     private void DecreaseEconomy()
     {

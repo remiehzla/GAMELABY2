@@ -26,8 +26,11 @@ public class PointCounter : MonoBehaviour
     [SerializeField] private Color32 UIColor;
     [SerializeField] private Color32 winUIColor;
 
+
     [SerializeField] private GameObject heartParticles;
     [SerializeField] private GameObject rainParticles;
+    [SerializeField] private GameObject confettiParticles;
+
 
     private GameManager gameManager;
 
@@ -96,6 +99,7 @@ public class PointCounter : MonoBehaviour
             if (gameManager.round > gameManager.maxRounds)
             {
                 panel.color = winUIColor;
+                confettiParticles.SetActive(true);
             }
             else
             {
@@ -122,5 +126,7 @@ public class PointCounter : MonoBehaviour
         {
             rainParticles.SetActive(false);
         }
+    
+
     }
 }
