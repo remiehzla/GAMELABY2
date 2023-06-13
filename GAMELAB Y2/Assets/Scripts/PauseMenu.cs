@@ -30,7 +30,23 @@ public class PauseMenu : MonoBehaviour
                 
         }
     }
-    // creating the methods of pausing and resuming
+
+    // Launch Pause Screen
+    public void LaunchPauseScreen()
+    {
+        if (GameIsPaused)
+        {
+            Resume();
+
+        }
+        else
+        {
+            Pause();
+
+        }
+    }
+
+   // creating the methods of pausing and resuming
     public void Resume()
     {
         //stopping the time of the game when pressed pause
